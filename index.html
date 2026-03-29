@@ -282,8 +282,7 @@
             <h2 class="text-4xl font-bold text-white mb-4">Tertarik Bekerja Sama?</h2>
             <p class="text-slate-400 italic">"Saya selalu terbuka untuk diskusi mengenai supply chain, manajemen risiko, atau peluang kolaborasi profesional lainnya."</p>
         </div>
-
-        <form action="https://formsubmit.co/galangyusalfarisi.personal@gmail.com" method="POST" class="space-y-6 bg-slate-800/50 p-8 md:p-12 rounded-[2.5rem] border border-white/5 shadow-xl">
+        <form id ="contact-form" action="https://formsubmit.co/galangyusalfarisi.personal@gmail.com" method="POST" class="space-y-6 bg-slate-800/50 p-8 md:p-12 rounded-[2.5rem] border border-white/5 shadow-xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label class="block text-xs font-bold text-orange-400 uppercase mb-2 ml-1">Nama Lengkap</label>
@@ -336,6 +335,47 @@
             </div>
         </div>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // Logika untuk menangkap pengiriman form
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', function(e) {
+        // Jangan biarkan halaman reload dulu
+        e.preventDefault();
 
+        // Ambil data dari form
+        const formData = new FormData(this);
+
+        // Kirim data ke FormSubmit (atau Formspree) secara background
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Tampilkan notifikasi sukses yang keren
+                Swal.fire({
+                    title: 'Pesan Terkirim!',
+                    text: 'Terima kasih, Pak Galang akan segera menghubungi Anda.',
+                    icon: 'success',
+                    confirmButtonColor: '#fb923c', // Warna orange sesuai tema Anda
+                    background: '#1e293b', // Warna slate-800 sesuai tema Anda
+                    color: '#ffffff',
+                    borderRadius: '20px'
+                });
+                contactForm.reset(); // Kosongkan form setelah kirim
+            } else {
+                Swal.fire({
+                    title: 'Oops!',
+                    text: 'Terjadi kesalahan, silakan coba lagi.',
+                    icon: 'error'
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>
