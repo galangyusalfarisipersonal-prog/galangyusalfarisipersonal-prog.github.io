@@ -1,0 +1,303 @@
+html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galang Yusalfarisi | Logistic Specialist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .accent-gold { color: #fbbf24; }
+        .bg-gold { background-color: #fbbf24; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md text-white py-4 shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter uppercase">GY<span class="accent-gold">.</span></span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#home" class="hover:accent-gold transition">Home</a>
+                <a href="#about" class="hover:accent-gold transition">Tentang</a>
+                <a href="#experience" class="hover:accent-gold transition">Pengalaman</a>
+                <a href="#achievements" class="hover:accent-gold transition">Prestasi</a>
+                <a href="#gallery" class="hover:accent-gold transition">Galeri</a>
+                <a href="#contact" class="hover:accent-gold transition text-yellow-400">Kontak</a>
+            </div>
+            <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen gradient-bg text-white flex items-center pt-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h2 class="accent-gold font-semibold tracking-widest mb-4 uppercase">Logistic Specialist</h2>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">Galang <br>Yusalfarisi</h1>
+                <p class="text-slate-400 text-lg mb-8 max-w-lg leading-relaxed">
+                    Berpengalaman lebih dari 3 tahun di industri pertambangan batubara. Spesialis dalam Procurement, Warehouse, dan Supply Chain Management.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#experience" class="bg-gold text-slate-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-500 transition shadow-xl">Lihat Portfolio</a>
+                    <a href="#contact" class="border border-white/20 px-8 py-3 rounded-full font-bold hover:bg-white/10 transition">Hubungi Saya</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center relative">
+                <div class="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl rotate-3 hover:rotate-0 transition duration-500 bg-slate-800">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" alt="Profil Galang Yusalfarisi" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                </div>
+                <!-- Floating Stats -->
+                <div class="absolute -bottom-6 -left-6 bg-white text-slate-900 p-6 rounded-xl shadow-2xl hidden md:block">
+                    <p class="text-3xl font-bold">3+</p>
+                    <p class="text-xs uppercase font-bold text-slate-500 tracking-tighter">Tahun Pengalaman</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16">
+                <div class="md:w-1/3">
+                    <h3 class="text-3xl font-bold mb-6">Ringkasan <br><span class="accent-gold">Profesional</span></h3>
+                    <div class="h-1 w-20 bg-gold mb-6"></div>
+                    <p class="text-slate-600 leading-loose italic">
+                        "Saya memiliki kepribadian yang disiplin, komitmen, dan bertanggung jawab. Fokus saya adalah optimalisasi nilai inventory dan keunggulan operasional."
+                    </p>
+                </div>
+                <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                        <i class="fas fa-warehouse text-3xl accent-gold mb-4"></i>
+                        <h4 class="font-bold text-lg mb-2">Inventory Management</h4>
+                        <p class="text-sm text-slate-500 italic">Meningkatkan utilisasi spare part dan optimalisasi inventory value secara efisien.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                        <i class="fas fa-shield-alt text-3xl accent-gold mb-4"></i>
+                        <h4 class="font-bold text-lg mb-2">Safety Representative</h4>
+                        <p class="text-sm text-slate-500">Berlisensi POP & I-SMKP, memastikan standar keselamatan tinggi di area tambang.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                        <i class="fas fa-chart-line text-3xl accent-gold mb-4"></i>
+                        <h4 class="font-bold text-lg mb-2">Data Analytics</h4>
+                        <p class="text-sm text-slate-500">Mahir menggunakan SAP MM, Power BI, dan Looker Studio untuk monitoring sistem.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                        <i class="fas fa-truck-loading text-3xl accent-gold mb-4"></i>
+                        <h4 class="font-bold text-lg mb-2">Supply Chain</h4>
+                        <p class="text-sm text-slate-500">Negosiasi vendor, procurement management, dan koordinasi lintas divisi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 uppercase tracking-tight">Pengalaman Kerja</h2>
+                <p class="text-slate-500">Perjalanan karir profesional di industri strategis</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Current Job -->
+                <div class="relative pl-8 border-l-2 border-yellow-400">
+                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-yellow-400 rounded-full"></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover">
+                        <span class="text-sm font-bold accent-gold">04/2023 - Present</span>
+                        <h3 class="text-2xl font-bold mt-2">Warehouse and Inventory Group Leader</h3>
+                        <p class="text-slate-600 font-medium">PT. HRS-FAD site Berau Coal</p>
+                        <ul class="mt-4 space-y-2 text-slate-500 text-sm list-disc pl-5">
+                            <li>Memonitor seluruh aktivitas pergudangan (penerimaan, penyimpanan, pengiriman).</li>
+                            <li>Menjamin ketersediaan material dan akurasi data transaksi warehouse.</li>
+                            <li>Memastikan validitas dokumen dan kepatuhan prosedur administrasi.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Job -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-slate-300 rounded-full"></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover">
+                        <span class="text-sm font-bold text-slate-400">02/2022 - 04/2023</span>
+                        <h3 class="text-2xl font-bold mt-2">FGDP Procurement and Logistic</h3>
+                        <p class="text-slate-600 font-medium">PT. Hasnur Riung Sinergi</p>
+                        <ul class="mt-4 space-y-2 text-slate-500 text-sm list-disc pl-5">
+                            <li>Negosiasi vendor dan pembuatan Purchase Order/Requestion.</li>
+                            <li>Pengawasan distribusi BBC dan aspek keselamatan unit operasional tambang.</li>
+                            <li>Pengelolaan SOP, instruksi kerja, dan standar operasional divisi.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Shopee -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-slate-300 rounded-full"></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover">
+                        <span class="text-sm font-bold text-slate-400">08/2021 - 01/2022</span>
+                        <h3 class="text-2xl font-bold mt-2">Business Dev. Project (Segar)</h3>
+                        <p class="text-slate-600 font-medium">PT. International Shopee Indonesia</p>
+                        <ul class="mt-4 space-y-2 text-slate-500 text-sm list-disc pl-5">
+                            <li>Outsourcing supplier produk fresh (sayuran, daging, susu).</li>
+                            <li>Pelaporan dan presentasi KPI mingguan hasil pengembangan produk.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="py-24 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-yellow-400/10 border border-yellow-400/30 rounded-3xl p-12 text-center max-w-5xl mx-auto">
+                <i class="fas fa-trophy text-6xl accent-gold mb-6"></i>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 italic">JUARA 1 Quality Control Project</h2>
+                <p class="text-xl mb-8 font-light italic">"Part Utilization by managing backlog using web-based monitoring system"</p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm font-bold uppercase tracking-widest">
+                    <span class="bg-white/10 px-6 py-2 rounded-full border border-white/20">PT. Hasnur Riung Sinergi</span>
+                    <span class="bg-white/10 px-6 py-2 rounded-full border border-white/20">Innovaction Award</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Sertifikasi Keahlian</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border border-slate-200 p-8 rounded-xl hover:border-yellow-400 transition cursor-default">
+                    <div class="text-yellow-500 font-bold mb-2">BNSP - Mar 2023</div>
+                    <h5 class="text-lg font-bold">Pengawas Operasional Pertama (POP)</h5>
+                </div>
+                <div class="border border-slate-200 p-8 rounded-xl hover:border-yellow-400 transition cursor-default">
+                    <div class="text-yellow-500 font-bold mb-2">BNSP - Apr 2024</div>
+                    <h5 class="text-lg font-bold">I-SMKP (Sistem Manajemen Keselamatan)</h5>
+                </div>
+                <div class="border border-slate-200 p-8 rounded-xl hover:border-yellow-400 transition cursor-default">
+                    <div class="text-yellow-500 font-bold mb-2">BNSP - Apr 2024</div>
+                    <h5 class="text-lg font-bold">PPLB3 (Pengelolaan Limbah B3)</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Album / Gallery -->
+    <section id="gallery" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Album Dokumentasi</h2>
+            <p class="text-slate-500 mb-12 italic">Aktivitas operasional, site visit, dan implementasi sistem</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+                <!-- Photo 1 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000" alt="Warehouse Operation" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
+                        <p class="text-white font-bold">Warehouse Management System Implementation</p>
+                    </div>
+                </div>
+                <!-- Photo 2 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1000" alt="Supply Chain" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
+                        <p class="text-white font-bold">Inventory Audit & Control Process</p>
+                    </div>
+                </div>
+                <!-- Photo 3 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b35242f8df02?q=80&w=1000" alt="Mining Site" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
+                        <p class="text-white font-bold">Site Visit - Berau Coal Jobsite</p>
+                    </div>
+                </div>
+                <!-- Photo 4 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg md:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1565891741441-64926e441838?q=80&w=1000" alt="Team Coordination" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6 text-center">
+                        <p class="text-white font-bold">Strategy Meeting with Cross-functional Teams</p>
+                    </div>
+                </div>
+                <!-- Photo 5 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000" alt="Quality Control Presentation" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
+                        <p class="text-white font-bold">Project Presentation - Best Quality Control</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6 uppercase tracking-tight">Latar Belakang <br>Pendidikan</h2>
+                    <p class="text-slate-500 mb-8 leading-relaxed">Pendidikan yang kuat dalam teknik industri dan agroindustri memberikan landasan berpikir sistematis untuk optimasi rantai pasok.</p>
+                </div>
+                <div class="md:w-1/2 space-y-6">
+                    <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl">
+                        <div class="bg-gold p-3 rounded-lg text-slate-900"><i class="fas fa-university text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl">IPB University</h4>
+                            <p class="text-sm text-slate-500 mb-2">S1 Agroindustrial Engineering (2017 - 2021)</p>
+                            <p class="text-xs text-slate-400 italic">Asisten Dosen - Preferensi Algoritma Skyline</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl">
+                        <div class="bg-slate-200 p-3 rounded-lg text-slate-900"><i class="fas fa-school text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl">SMA Negeri Agam Cendekia</h4>
+                            <p class="text-sm text-slate-500">Boarding School - Semi-Militer (2014 - 2017)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="bg-slate-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+                <div>
+                    <h3 class="text-4xl font-bold mb-6">Tertarik Bekerja Sama?</h3>
+                    <p class="text-slate-400 mb-8 max-w-sm">Saya selalu terbuka untuk diskusi mengenai supply chain, manajemen risiko, atau peluang kolaborasi profesional lainnya.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-envelope accent-gold w-6"></i>
+                            <span class="text-slate-300">galangyusalfarisi.personal@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fab fa-linkedin accent-gold w-6"></i>
+                            <a href="https://id.linkedin.com/in/galangyusalfarisi" class="text-slate-300 hover:text-yellow-400 transition underline">id.linkedin.com/in/galangyusalfarisi</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                    <form onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden');" class="space-y-4">
+                        <input type="text" placeholder="Nama Lengkap" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-400 transition" required>
+                        <input type="email" placeholder="Alamat Email" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-400 transition" required>
+                        <textarea placeholder="Pesan Anda..." rows="4" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-400 transition" required></textarea>
+                        <button type="submit" class="w-full bg-gold text-slate-900 font-bold py-3 rounded-xl hover:bg-yellow-500 transition shadow-lg shadow-yellow-500/20">Kirim Pesan</button>
+                    </form>
+                    <div id="success-msg" class="hidden mt-4 text-center text-green-400 text-sm font-medium">Pesan berhasil dikirim! (Simulasi)</div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-12 text-center text-slate-500 text-sm italic">
+                &copy; 2024 Galang Yusalfarisi - Logistic Specialist Portfolio. Dibuat untuk self-branding profesional.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
