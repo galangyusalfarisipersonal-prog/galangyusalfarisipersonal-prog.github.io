@@ -23,8 +23,8 @@
         <div class="container mx-auto px-6 flex justify-between items-center">
             <span class="text-xl font-bold tracking-tighter uppercase">GYf<span class="accent-gold">.</span></span>
             <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#home" class="hover:accent-gold transition">Home</a>
-                <a href="#about" class="hover:accent-gold transition">Tentang</a>
+                <a href="#home" class="hover:accent-gold transition">Profil</a>
+                <a href="#about" class="hover:accent-gold transition">Ringkasan</a>
                 <a href="#experience" class="hover:accent-gold transition">Pengalaman</a>
                 <a href="#achievements" class="hover:accent-gold transition">Prestasi</a>
                 <a href="#gallery" class="hover:accent-gold transition">Galeri</a>
@@ -74,26 +74,21 @@
     </div>
 </section>
 
-    <!-- About Section -->
-    <section id="home" class="max-w-6xl mx-auto px-8 pt-32 pb-24">
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
-                <div class="space-y-10">
-                    <div class="inline-flex items-center gap-3 px-4 py-2 bg-white shadow-sm border border-slate-100 text-amber-600 text-[10px] font-black rounded-full uppercase tracking-widest">
-                        <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span> 
-                        Supply Chain & Operasional Specialist
-                    </div>
-                    <h1 class="text-5xl lg:text-7xl font-black leading-[0.95] text-[#1e293b] tracking-tighter">
-                        Precision <br/>
-                        <span class="gradient-text uppercase">Operations.</span>
+    <!-- Ringkasan Profesional -->
+        <section id="home" class="max-w-6xl mx-auto px-8 pt-32 pb-20">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <h1 class="text-5xl lg:text-7xl font-black leading-tight text-slate-900 tracking-tighter">
+                        Ringkasan <br/>
+                        <span class="gradient-gold uppercase">Profesional</span>
                     </h1>
-                    <p class="text-[#64748b] text-[1.1rem] font-medium leading-relaxed max-w-lg border-l-4 border-amber-500 pl-6 italic">
-                        Strategis dalam manajemen logistik, pengawasan sistem energi, dan optimalisasi unit operasional pertambangan berkelanjutan.
+                    <p class="text-slate-500 text-lg font-medium leading-relaxed max-w-lg border-l-4 border-amber-500 pl-6 italic">
+                        "Saya memiliki kepribadian yang disiplin, komitmen, dan bertanggung jawab. Fokus saya adalah optimalisasi nilai inventory dan keunggulan operasional."
                     </p>
                 </div>
             </div>
         </section>
 
-    <!-- DARK SECTION: Kompetensi -->
         <!-- SECTION KOMPETENSI (10 Kompetensi dengan Latar Gelap) -->
         <section id="competence" class="bg-dark-section py-24 relative overflow-hidden">
             <div class="max-w-6xl mx-auto px-8 relative z-10">
@@ -108,19 +103,25 @@
                 </div>
             </div>
         </section>
-    
-    <!-- Experience Timeline -->
-    <section class="max-w-6xl mx-auto px-8 py-32" id="experience">
-            <div class="text-center mb-24 space-y-4">
-                <h2 class="text-3xl font-black uppercase tracking-tighter text-[#1e293b]">Jejak Karir Profesional</h2>
-                <div class="w-16 h-1.5 bg-amber-500 mx-auto rounded-full"></div>
-            </div>
 
-            <div class="relative max-w-4xl mx-auto" id="experience-container">
-                <div class="hidden md:block absolute left-0 top-0 bottom-0 w-[1px] bg-slate-200"></div>
-                <!-- Experience items will be injected by JavaScript -->
+        <!-- Pengalaman Kerja -->
+        <section id="experience" class="max-w-6xl mx-auto px-8 py-32">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-center mb-20 text-slate-900">Pengalaman Kerja</h2>
+            <div class="max-w-4xl mx-auto space-y-10" id="experience-container">
+                <!-- Diisi secara otomatis oleh JavaScript -->
             </div>
         </section>
+    </main>
+
+    <!-- Modal Pop-up -->
+    <div id="modal" class="fixed inset-0 z-[100] hidden bg-slate-900/90 backdrop-blur-sm items-center justify-center p-6 transition-all duration-300 opacity-0">
+        <div class="bg-white w-full max-w-md p-10 rounded-[2.5rem] relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
 
     <!-- Achievements -->
     <section id="achievements" class="py-24 gradient-bg text-white">
@@ -335,16 +336,6 @@
         });
     });
 </script>
- <!-- Modal Pop-up -->
-    <div id="modal" class="fixed inset-0 z-[100] hidden bg-slate-900/90 backdrop-blur-sm items-center justify-center p-6 transition-all duration-300 opacity-0">
-        <div class="bg-white w-full max-w-md p-10 rounded-[2.5rem] relative transform scale-95 transition-transform duration-300">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div id="modal-content"></div>
-        </div>
-    </div>
-
     <!-- SCRIPT DATA (Semua 10 Kompetensi & Pengalaman) -->
     <script>
         const kompetensiData = [
