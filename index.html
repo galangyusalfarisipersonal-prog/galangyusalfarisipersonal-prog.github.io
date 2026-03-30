@@ -76,51 +76,134 @@
 
     <!-- Ringkasan Profesional -->
         <section id="home" class="max-w-6xl mx-auto px-8 pt-32 pb-20">
-            <div class="grid lg:grid-cols-2 gap-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-8">
-                    <h1 class="text-5xl lg:text-7xl font-black leading-tight text-slate-900 tracking-tighter">
+                    <h1 class="text-6xl lg:text-8xl font-black leading-tight text-slate-900 tracking-tighter">
                         Ringkasan <br/>
                         <span class="gradient-gold uppercase">Profesional</span>
                     </h1>
-                    <p class="text-slate-500 text-lg font-medium leading-relaxed max-w-lg border-l-4 border-amber-500 pl-6 italic">
+                    <p class="text-slate-500 text-xl font-medium leading-relaxed max-w-lg border-l-4 border-amber-500 pl-6 italic">
                         "Saya memiliki kepribadian yang disiplin, komitmen, dan bertanggung jawab. Fokus saya adalah optimalisasi nilai inventory dan keunggulan operasional."
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION KOMPETENSI (10 Kompetensi dengan Latar Gelap) -->
-        <section id="competence" class="bg-dark-section py-24 relative overflow-hidden">
-            <div class="max-w-6xl mx-auto px-8 relative z-10">
+        <!-- SECTION KOMPETENSI (10 Kompetensi - Latar Gelap) -->
+        <section id="competence" class="bg-dark-navy py-24 relative">
+            <div class="max-w-6xl mx-auto px-8">
                 <div class="mb-16">
                     <p class="text-amber-500 text-[10px] font-black uppercase tracking-[0.4em] mb-2">Core Capabilities</p>
                     <h2 class="text-4xl font-black text-white uppercase tracking-tighter">Kompetensi Inti</h2>
-                    <div class="w-16 h-1 bg-amber-500 mt-4"></div>
+                    <div class="w-16 h-1 bg-amber-500 mt-4 rounded-full"></div>
                 </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="skills-grid">
-                    <!-- Diisi secara otomatis oleh JavaScript -->
+                <!-- Grid Kompetensi (Langsung di HTML agar tidak hilang) -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    
+                    <!-- 1 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Auditee I-SMKP</h3>
+                    </div>
+                    <!-- 2 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="bar-chart-3" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Data Analytics</h3>
+                    </div>
+                    <!-- 3 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="file-text" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Document Controller</h3>
+                    </div>
+                    <!-- 4 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="droplets" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Fuel & Oil Management</h3>
+                    </div>
+                    <!-- 5 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="database" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Inventory Management</h3>
+                    </div>
+                    <!-- 6 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="hard-hat" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Safety Representative</h3>
+                    </div>
+                    <!-- 7 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="truck" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Supply Chain</h3>
+                    </div>
+                    <!-- 8 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="users" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Trainer MSDS</h3>
+                    </div>
+                    <!-- 9 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="navigation" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Unit Mobilization</h3>
+                    </div>
+                    <!-- 10 -->
+                    <div class="card-skill p-6 rounded-3xl text-center">
+                        <div class="text-amber-500 mb-4 flex justify-center"><i data-lucide="warehouse" class="w-8 h-8"></i></div>
+                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">Warehouse Management</h3>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- Pengalaman Kerja -->
         <section id="experience" class="max-w-6xl mx-auto px-8 py-32">
-            <h2 class="text-3xl font-black uppercase tracking-tighter text-center mb-20 text-slate-900">Pengalaman Kerja</h2>
-            <div class="max-w-4xl mx-auto space-y-10" id="experience-container">
-                <!-- Diisi secara otomatis oleh JavaScript -->
+            <h2 class="text-4xl font-black uppercase tracking-tighter text-center mb-20 text-slate-900 underline decoration-amber-500 decoration-8 underline-offset-8">Pengalaman Kerja</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Exp 1 -->
+                <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-amber-500 font-black text-xs uppercase tracking-widest">04/2023 - Present</span>
+                        <span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-3 py-1 rounded-full uppercase">Aktif</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tight">Warehouse and Inventory Group Leader</h3>
+                    <p class="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] mt-1">PT. HRS-FAD site Berau Coal</p>
+                    <ul class="mt-6 space-y-2 text-slate-500 text-sm font-medium list-disc list-inside">
+                        <li>Memonitor seluruh aktivitas pergudangan (penerimaan, penyimpanan, pengiriman).</li>
+                        <li>Menjamin ketersediaan material dan akurasi data transaksi warehouse.</li>
+                        <li>Memastikan validitas dokumen dan kepatuhan prosedur administrasi.</li>
+                    </ul>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all opacity-80">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-slate-400 font-black text-xs uppercase tracking-widest">02/2022 - 04/2023</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tight">FGDP Procurement and Logistic</h3>
+                    <p class="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] mt-1">PT. Hasnur Riung Sinergi</p>
+                    <ul class="mt-6 space-y-2 text-slate-500 text-sm font-medium list-disc list-inside">
+                        <li>Negosiasi vendor dan pembuatan Purchase Order/Requestion.</li>
+                        <li>Pengawasan distribusi BBM dan aspek keselamatan unit operasional tambang.</li>
+                        <li>Pengelolaan SOP, instruksi kerja, dan standar operasional divisi.</li>
+                    </ul>
+                </div>
+
+                <!-- Exp 3 -->
+                <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all opacity-80">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-slate-400 font-black text-xs uppercase tracking-widest">08/2021 - 01/2022</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tight">Business Dev. Project (Segar)</h3>
+                    <p class="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] mt-1">PT. International Shopee Indonesia</p>
+                    <ul class="mt-6 space-y-2 text-slate-500 text-sm font-medium list-disc list-inside">
+                        <li>Outsourcing supplier produk fresh (sayuran, daging, susu).</li>
+                        <li>Pelaporan dan presentasi KPI mingguan hasil pengembangan produk.</li>
+                    </ul>
+                </div>
             </div>
         </section>
-    
-    <!-- Modal Pop-up -->
-    <div id="modal" class="fixed inset-0 z-[100] hidden bg-slate-900/90 backdrop-blur-sm items-center justify-center p-6 transition-all duration-300 opacity-0">
-        <div class="bg-white w-full max-w-md p-10 rounded-[2.5rem] relative transform scale-95 transition-transform duration-300">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div id="modal-content"></div>
-        </div>
-    </div>
 
     <!-- Achievements -->
     <section id="achievements" class="py-24 gradient-bg text-white">
@@ -335,104 +418,11 @@
         });
     });
 </script>
-    <!-- SCRIPT DATA (Semua 10 Kompetensi & Pengalaman) -->
-    <script>
-        const kompetensiData = [
-            { title: "Auditee I-SMKP", icon: "shield-check", desc: "Implementasi dan pengawasan standar audit Sistem Manajemen Keselamatan Pertambangan (SMKP)." },
-            { title: "Data Analytics", icon: "bar-chart-3", desc: "Transformasi data operasional menjadi insight menggunakan SAP, Power BI, dan Looker Studio." },
-            { title: "Document Controller", icon: "file-text", desc: "Pengelolaan administrasi terpadu dan validitas dokumen transaksi sesuai standar ISO." },
-            { title: "Fuel & Oil Management", icon: "droplets", desc: "Pengawasan distribusi dan konsumsi BBM serta pelumas untuk efisiensi unit di site." },
-            { title: "Inventory Management", icon: "database", desc: "Analisis perputaran barang untuk meminimalisir deadstock dan mengoptimalkan modal kerja." },
-            { title: "Safety Representative", icon: "hard-hat", desc: "Pemegang sertifikasi POP, bertanggung jawab atas keselamatan kerja di area tambang." },
-            { title: "Supply Chain", icon: "truck", desc: "Manajemen rantai pasok terintegrasi dari pengadaan hingga logistik distribusi." },
-            { title: "Trainer MSDS", icon: "users", desc: "Instruktur pelatihan penanganan material berbahaya (B3) bagi kru lapangan." },
-            { title: "Unit Mobilization", icon: "navigation", desc: "Koordinasi logistik dan manajemen mobilisasi unit alat berat antar site tambang." },
-            { title: "Warehouse Management", icon: "warehouse", desc: "Manajemen gudang dengan fokus pada akurasi stok (99%+) dan efisiensi ruang." }
-        ].sort((a, b) => a.title.localeCompare(b.title));
-
-        const pengalamanData = [
-            {
-                tgl: "04/2023 - Sekarang",
-                posisi: "Warehouse and Inventory Group Leader",
-                pt: "PT. HRS-FAD site Berau Coal",
-                desc: "Memimpin operasional gudang dengan fokus pada akurasi data inventori dan efisiensi alur barang masuk-keluar."
-            },
-            {
-                tgl: "02/2022 - 04/2023",
-                posisi: "FGDP Procurement and Logistic",
-                pt: "PT. Hasnur Riung Sinergi",
-                desc: "Mengelola pengadaan barang operasional dan logistik bahan bakar untuk mendukung ketersediaan unit alat berat."
-            },
-            {
-                tgl: "08/2021 - 01/2022",
-                posisi: "Business Dev. Project (Segar)",
-                pt: "PT. International Shopee Indonesia",
-                desc: "Mendukung ekspansi bisnis fresh food melalui riset pasar dan strategi akuisisi supplier."
-            }
-        ];
-    </script>
-
-    <!-- SCRIPT LOGIKA RENDER -->
-    <script>
-        function renderContent() {
-            const skillGrid = document.getElementById('skills-grid');
-            const expBox = document.getElementById('experience-container');
-
-            // Render 10 Kartu Kompetensi
-            kompetensiData.forEach(item => {
-                skillGrid.innerHTML += `
-                    <div onclick="openModal('${item.title}', '${item.desc}', '${item.icon}')" class="group cursor-pointer bg-white/5 border border-white/10 p-6 rounded-3xl hover:bg-white/10 hover:border-amber-500/50 transition-all text-center">
-                        <div class="text-amber-500 mb-4 flex justify-center">
-                            <i data-lucide="${item.icon}" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-white font-bold text-[10px] uppercase tracking-widest">${item.title}</h3>
-                    </div>
-                `;
-            });
-
-            // Render Pengalaman
-            pengalamanData.forEach(exp => {
-                expBox.innerHTML += `
-                    <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-all">
-                        <span class="text-amber-500 font-black text-[10px] uppercase tracking-widest">${exp.tgl}</span>
-                        <h3 class="text-2xl font-black text-slate-900 mt-2">${exp.posisi}</h3>
-                        <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest mt-1">${exp.pt}</p>
-                        <p class="mt-6 text-slate-500 leading-relaxed italic opacity-80 border-l-2 border-slate-100 pl-4">"${exp.desc}"</p>
-                    </div>
-                `;
-            });
-
-            // PENTING: Inisialisasi ikon setelah HTML di-render
+<script>
+        // Inisialisasi ikon saat halaman dimuat
+        window.onload = function() {
             lucide.createIcons();
         }
-
-        function openModal(title, desc, icon) {
-            const modal = document.getElementById('modal');
-            const content = document.getElementById('modal-content');
-            content.innerHTML = `
-                <div class="text-amber-500 mb-6 flex justify-center"><i data-lucide="${icon}" class="w-12 h-12"></i></div>
-                <h2 class="text-xl font-black uppercase text-slate-900 mb-4 text-center">${title}</h2>
-                <p class="text-slate-500 leading-relaxed text-sm text-center">${desc}</p>
-            `;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            setTimeout(() => {
-                modal.style.opacity = "1";
-            }, 10);
-            lucide.createIcons();
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('modal');
-            modal.style.opacity = "0";
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }, 300);
-        }
-
-        window.onload = renderContent;
     </script>
 </body>
 </html>
