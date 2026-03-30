@@ -75,97 +75,61 @@
 </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row gap-16">
-                <div class="md:w-1/3">
-                    <h3 class="text-3xl font-bold mb-6">Ringkasan <br><span class="accent-gold">Profesional</span></h3>
-                    <div class="h-1 w-20 bg-gold mb-6"></div>
-                    <p class="text-slate-600 leading-loose italic">
-                        "Saya memiliki kepribadian yang disiplin, komitmen, dan bertanggung jawab. Fokus saya adalah optimalisasi nilai inventory dan keunggulan operasional."
+    <section id="home" class="max-w-6xl mx-auto px-8 pt-32 pb-24">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="space-y-10">
+                    <div class="inline-flex items-center gap-3 px-4 py-2 bg-white shadow-sm border border-slate-100 text-amber-600 text-[10px] font-black rounded-full uppercase tracking-widest">
+                        <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span> 
+                        Supply Chain & Operasional Specialist
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-black leading-[0.95] text-[#1e293b] tracking-tighter">
+                        Precision <br/>
+                        <span class="gradient-text uppercase">Operations.</span>
+                    </h1>
+                    <p class="text-[#64748b] text-[1.1rem] font-medium leading-relaxed max-w-lg border-l-4 border-amber-500 pl-6 italic">
+                        Strategis dalam manajemen logistik, pengawasan sistem energi, dan optimalisasi unit operasional pertambangan berkelanjutan.
                     </p>
                 </div>
-                <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                        <i class="fas fa-warehouse text-3xl accent-gold mb-4"></i>
-                        <h4 class="font-bold text-lg mb-2">Inventory Management</h4>
-                        <p class="text-sm text-slate-500 italic">Meningkatkan utilisasi spare part dan optimalisasi inventory value secara efisien.</p>
+            </div>
+        </section>
+
+    <!-- DARK SECTION: Kompetensi -->
+        <section class="bg-[#1e293b] py-24 relative overflow-hidden" id="competence">
+            <div class="absolute inset-0 opacity-5 pointer-events-none">
+                <div class="absolute top-0 left-0 w-96 h-96 bg-amber-500 rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-amber-500 rounded-full blur-[150px] translate-x-1/2 translate-y-1/2"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-8 relative z-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div class="space-y-3">
+                        <p class="text-amber-500 text-[10px] font-black uppercase tracking-[0.4em]">Core Capabilities</p>
+                        <h2 class="text-4xl font-black uppercase tracking-tighter text-white">Kompetensi Inti</h2>
+                        <div class="w-16 h-1.5 bg-amber-500 rounded-full"></div>
                     </div>
-                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                        <i class="fas fa-shield-alt text-3xl accent-gold mb-4"></i>
-                        <h4 class="font-bold text-lg mb-2">Safety Representative</h4>
-                        <p class="text-sm text-slate-500">Berlisensi POP & I-SMKP, memastikan standar keselamatan tinggi di area tambang.</p>
-                    </div>
-                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                        <i class="fas fa-chart-line text-3xl accent-gold mb-4"></i>
-                        <h4 class="font-bold text-lg mb-2">Data Analytics</h4>
-                        <p class="text-sm text-slate-500">Mahir menggunakan SAP MM, Power BI, dan Looker Studio untuk monitoring sistem.</p>
-                    </div>
-                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                        <i class="fas fa-truck-loading text-3xl accent-gold mb-4"></i>
-                        <h4 class="font-bold text-lg mb-2">Supply Chain</h4>
-                        <p class="text-sm text-slate-500">Negosiasi vendor, procurement management, dan koordinasi lintas divisi.</p>
-                    </div>
+                    <p class="max-w-xs text-[11px] font-medium text-slate-400 uppercase tracking-widest leading-relaxed">
+                        Standar Manajemen Keselamatan Pertambangan & Efisiensi Rantai Pasok Global.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="skills-grid">
+                    <!-- Cards will be injected by JavaScript -->
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    
     <!-- Experience Timeline -->
-    <section id="experience" class="py-24 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 uppercase tracking-tight">Pengalaman Kerja</h2>
-                <p class="text-slate-500">Perjalanan karir profesional di industri strategis</p>
+    <section class="max-w-6xl mx-auto px-8 py-32" id="experience">
+            <div class="text-center mb-24 space-y-4">
+                <h2 class="text-3xl font-black uppercase tracking-tighter text-[#1e293b]">Jejak Karir Profesional</h2>
+                <div class="w-16 h-1.5 bg-amber-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="max-w-4xl mx-auto space-y-12">
-                <!-- Current Job -->
-                <div class="relative pl-8 border-l-2 border-yellow-400">
-                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-yellow-400 rounded-full"></div>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover">
-                        <span class="text-sm font-bold accent-gold">04/2023 - Present</span>
-                        <h3 class="text-2xl font-bold mt-2">Warehouse and Inventory Group Leader</h3>
-                        <p class="text-slate-600 font-medium">PT. HRS-FAD site Berau Coal</p>
-                        <ul class="mt-4 space-y-2 text-slate-500 text-sm list-disc pl-5">
-                            <li>Memonitor seluruh aktivitas pergudangan (penerimaan, penyimpanan, pengiriman).</li>
-                            <li>Menjamin ketersediaan material dan akurasi data transaksi warehouse.</li>
-                            <li>Memastikan validitas dokumen dan kepatuhan prosedur administrasi.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Previous Job -->
-                <div class="relative pl-8 border-l-2 border-slate-200">
-                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-slate-300 rounded-full"></div>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover">
-                        <span class="text-sm font-bold text-slate-400">02/2022 - 04/2023</span>
-                        <h3 class="text-2xl font-bold mt-2">FGDP Procurement and Logistic</h3>
-                        <p class="text-slate-600 font-medium">PT. Hasnur Riung Sinergi</p>
-                        <ul class="mt-4 space-y-2 text-slate-500 text-sm list-disc pl-5">
-                            <li>Negosiasi vendor dan pembuatan Purchase Order/Requestion.</li>
-                            <li>Pengawasan distribusi BBC dan aspek keselamatan unit operasional tambang.</li>
-                            <li>Pengelolaan SOP, instruksi kerja, dan standar operasional divisi.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Shopee -->
-                <div class="relative pl-8 border-l-2 border-slate-200">
-                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-slate-300 rounded-full"></div>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 card-hover">
-                        <span class="text-sm font-bold text-slate-400">08/2021 - 01/2022</span>
-                        <h3 class="text-2xl font-bold mt-2">Business Dev. Project (Segar)</h3>
-                        <p class="text-slate-600 font-medium">PT. International Shopee Indonesia</p>
-                        <ul class="mt-4 space-y-2 text-slate-500 text-sm list-disc pl-5">
-                            <li>Outsourcing supplier produk fresh (sayuran, daging, susu).</li>
-                            <li>Pelaporan dan presentasi KPI mingguan hasil pengembangan produk.</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="relative max-w-4xl mx-auto" id="experience-container">
+                <div class="hidden md:block absolute left-0 top-0 bottom-0 w-[1px] bg-slate-200"></div>
+                <!-- Experience items will be injected by JavaScript -->
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Achievements -->
     <section id="achievements" class="py-24 gradient-bg text-white">
@@ -380,5 +344,85 @@
         });
     });
 </script>
+<script>
+        const expertise = [
+            { title: "Auditee I-SMKP", icon: "shield-check", desc: "Implementasi dan pengawasan standar audit Sistem Manajemen Keselamatan Pertambangan (SMKP)." },
+            { title: "Data Analytics", icon: "bar-chart-3", desc: "Transformasi data operasional menjadi insight menggunakan SAP, Power BI, dan Looker Studio." },
+            { title: "Document Controller", icon: "file-text", desc: "Pengelolaan administrasi terpadu dan validitas dokumen transaksi sesuai standar ISO." },
+            { title: "Fuel & Oil Management", icon: "droplets", desc: "Pengawasan distribusi dan konsumsi BBM serta pelumas untuk efisiensi unit di site." },
+            { title: "Inventory Management", icon: "database", desc: "Analisis perputaran barang untuk meminimalisir deadstock dan mengoptimalkan modal kerja." },
+            { title: "Safety Representative", icon: "hard-hat", desc: "Pemegang sertifikasi POP, bertanggung jawab atas keselamatan kerja di area tambang." },
+            { title: "Supply Chain", icon: "truck", desc: "Manajemen rantai pasok terintegrasi dari pengadaan hingga logistik distribusi." },
+            { title: "Trainer MSDS", icon: "users", desc: "Instruktur pelatihan penanganan material berbahaya (B3) bagi kru lapangan." },
+            { title: "Unit Mobilization", icon: "navigation", desc: "Koordinasi logistik dan manajemen mobilisasi unit alat berat antar site tambang." },
+            { title: "Warehouse Management", icon: "warehouse", desc: "Manajemen gudang dengan fokus pada akurasi stok (99%+) dan efisiensi ruang." }
+        ].sort((a, b) => a.title.localeCompare(b.title));
+
+        const experiences = [
+            {
+                period: "2023 - Sekarang",
+                role: "Warehouse and Inventory Group Leader",
+                company: "PT. HRS-FAD site Berau Coal",
+                summary: "Memimpin operasional gudang dengan fokus pada akurasi data inventori dan efisiensi alur barang masuk-keluar.",
+                current: true
+            },
+            {
+                period: "2022 - 2023",
+                role: "FGDP Procurement and Logistic",
+                company: "PT. Hasnur Riung Sinergi",
+                summary: "Mengelola pengadaan barang operasional dan logistik bahan bakar untuk mendukung ketersediaan unit alat berat.",
+                current: false
+            },
+            {
+                period: "2021 - 2022",
+                role: "Business Dev. Project (Segar)",
+                company: "PT. International Shopee Indonesia",
+                summary: "Mendukung ekspansi bisnis fresh food melalui riset pasar dan strategi akuisisi supplier.",
+                current: false
+            }
+        ];
+
+        // Inject Skills
+        const skillsGrid = document.getElementById('skills-grid');
+        expertise.forEach(item => {
+            skillsGrid.innerHTML += `
+                <div class="group bg-white/5 backdrop-blur-sm p-6 rounded-[2rem] border border-white/10 hover:border-amber-500/50 hover:bg-white/10 transition-all duration-500 text-center cursor-default">
+                    <div class="mb-4 bg-amber-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mx-auto text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-500">
+                        <i data-lucide="${item.icon}" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-[0.75rem] font-black text-white/90 mb-2 tracking-tight uppercase group-hover:text-amber-500 transition-colors">${item.title}</h3>
+                    <p class="text-[0.6rem] text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity leading-tight">${item.desc}</p>
+                </div>
+            `;
+        });
+
+        // Inject Experiences
+        const expContainer = document.getElementById('experience-container');
+        experiences.forEach(exp => {
+            expContainer.innerHTML += `
+                <div class="relative md:pl-16 group mb-16">
+                    <div class="hidden md:flex absolute left-[-11px] top-1 items-center justify-center z-10 transition-transform duration-500 group-hover:scale-125">
+                        <div class="w-[22px] h-[22px] rounded-full border-4 border-[#fafafa] shadow-md ${exp.current ? 'bg-amber-500' : 'bg-slate-300'}"></div>
+                    </div>
+                    <div class="flex flex-col md:flex-row bg-white rounded-[2.5rem] border border-slate-100 hover:border-amber-200 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <div class="md:w-1/3 bg-slate-50 p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-100 group-hover:bg-slate-100 transition-colors">
+                            <div class="space-y-4">
+                                <div class="inline-flex px-3 py-1 bg-white rounded-full text-[9px] font-black text-amber-600 shadow-sm uppercase tracking-widest border border-slate-100">${exp.period}</div>
+                                <h4 class="text-sm font-black text-slate-400 uppercase tracking-[0.15em] leading-tight">${exp.company}</h4>
+                            </div>
+                            ${exp.current ? '<div class="mt-6 flex items-center gap-2"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span><span class="text-emerald-600 text-[9px] font-black uppercase tracking-widest">Active Site</span></div>' : ''}
+                        </div>
+                        <div class="md:w-2/3 p-10 space-y-6 flex flex-col justify-center">
+                            <h3 class="text-xl md:text-2xl font-bold text-[#1e293b] leading-tight tracking-tight group-hover:text-amber-500 transition-colors">${exp.role}</h3>
+                            <p class="text-slate-500 text-[14px] leading-relaxed font-medium italic opacity-80 group-hover:opacity-100 transition-opacity">"${exp.summary}"</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
