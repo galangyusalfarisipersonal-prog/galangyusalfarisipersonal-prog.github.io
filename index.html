@@ -195,71 +195,85 @@
     <!-- Ringkasan -->
         <section id="about" class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-start fade-in">
             
-            <!-- BAGIAN JUDAL: ABOUT ME (Pemberian Jarak Atas) -->
-        <header class="mb-14">
-            <h1 class="text-6xl font-black italic tracking-tighter text-navy leading-[0.8]">ABOUT</h1>
-            <h1 class="text-6xl font-black italic tracking-tighter text-orange-vibrant leading-[0.8]">ME</h1>
-        </header>
-
-        <!-- LOKASI & SPESIALISASI (Jarak antar elemen ditingkatkan) -->
-        <section class="space-y-10">
-            
-            <!-- Lokasi -->
-            <div>
-                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-300 block mb-3 italic">Lokasi Sekarang</span>
+           <!-- KOLOM KIRI: INFO PROFIL (3/12) -->
+        <aside class="lg:col-span-4 space-y-16">
+            <!-- Lokasi Sekarang -->
+            <div class="space-y-4">
+                <span class="text-[10px] font-black uppercase text-slate-300 label-spacing italic">LOKASI SEKARANG</span>
                 <div class="flex items-center gap-3">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-orange-vibrant"></i>
-                    <span class="text-sm font-black text-navy uppercase italic tracking-tight">Padang / Murung Raya</span>
+                    <i data-lucide="map-pin" class="w-5 h-5 text-orange-vibrant"></i>
+                    <span class="text-lg font-black text-navy uppercase italic">PADANG / MURUNG RAYA</span>
                 </div>
             </div>
 
             <!-- Spesialisasi -->
-            <div class="relative">
-                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-300 block mb-3 italic">Spesialisasi Utama</span>
+            <div class="space-y-4">
+                <span class="text-[10px] font-black uppercase text-slate-300 label-spacing italic">SPESIALISASI UTAMA</span>
                 <div class="flex items-start gap-3">
-                    <i data-lucide="box" class="w-4 h-4 text-orange-vibrant mt-1"></i>
-                    <span class="text-sm font-black text-navy uppercase italic leading-relaxed tracking-tight">
-                        SAP MM, Looker Studio Data, Microsoft Office, Power BI, HTML
+                    <i data-lucide="award" class="w-5 h-5 text-orange-vibrant mt-1"></i>
+                    <span class="text-lg font-black text-navy uppercase italic leading-tight">
+                        SAP MM, LOOKER STUDIO DATA, MICROSOFT OFFICE, POWER BI, HTML
                     </span>
                 </div>
             </div>
 
-            <!-- RINGKASAN & POIN (Dengan Garis Samping Kontinu) -->
-            <div class="flex gap-6 pt-4">
-                <!-- Garis Samping Statis -->
+            <!-- Kontak Cepat -->
+            <div class="pt-8 border-t border-slate-100">
+                <div class="flex gap-10">
+                    <div>
+                        <span class="block text-3xl font-black italic text-navy leading-none">05+</span>
+                        <span class="text-[8px] uppercase font-bold text-slate-400 tracking-widest italic mt-2 block">TAHUN KARIR</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-black italic text-navy leading-none">99%</span>
+                        <span class="text-[8px] uppercase font-bold text-slate-400 tracking-widest italic mt-2 block">AKURASI STOK</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- KOLOM KANAN: RINGKASAN UTAMA (8/12) -->
+        <article class="lg:col-span-8">
+            <!-- Judul Visual Besar -->
+            <div class="mb-16">
+                <h1 class="text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.8] text-navy italic">
+                    ABOUT
+                </h1>
+                <h1 class="text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.8] text-orange-vibrant italic">
+                    ME
+                </h1>
+            </div>
+
+            <!-- Area Deskripsi dengan Jarak Sidebar -->
+            <div class="flex">
+                <!-- Sidebar Line -->
                 <div class="sidebar-line flex-shrink-0"></div>
                 
-                <div class="space-y-12">
-                    <!-- Paragraf Ringkasan -->
-                    <p class="text-slate-400 text-base md:text-lg leading-relaxed font-medium italic">
+                <div class="space-y-16">
+                    <!-- Paragraf Ringkasan Komprehensif -->
+                    <p class="text-slate-500 text-xl md:text-3xl leading-relaxed font-medium italic">
                         "Berkomitmen dalam menyelaraskan <span class="text-navy font-bold">integritas operasional</span> dengan strategi manajemen rantai pasok yang tangguh. Fokus utama saya adalah memastikan optimalisasi nilai inventori dan akurasi stock gudang serta keunggulan eksekusi lapangan demi tercapainya efisiensi biaya dan keberlanjutan operasional pada proyek industri skala besar."
                     </p>
 
-                    <!-- Poin-Poin Keahlian (Jarak antar poin ditingkatkan) -->
-                    <div class="space-y-6 pl-2">
+                    <!-- Poin Keahlian Strategis -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
                         <div class="profile-skill">
-                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Strategic Leadership</span>
+                            <span class="text-xs font-black uppercase tracking-[0.2em] text-navy italic border-b-2 border-slate-100 pb-2 block">STRATEGIC LEADERSHIP</span>
                         </div>
                         <div class="profile-skill">
-                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Warehouse and Inventory Management</span>
+                            <span class="text-xs font-black uppercase tracking-[0.2em] text-navy italic border-b-2 border-slate-100 pb-2 block">WAREHOUSE & INVENTORY</span>
                         </div>
                         <div class="profile-skill">
-                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Fuel and Oil Management</span>
+                            <span class="text-xs font-black uppercase tracking-[0.2em] text-navy italic border-b-2 border-slate-100 pb-2 block">FUEL & OIL MANAGEMENT</span>
                         </div>
                         <div class="profile-skill">
-                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Logistic and Supply Chain Management</span>
-                        </div>
-                        <div class="profile-skill">
-                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Safety Compliance System</span>
-                        </div>
-                        <div class="profile-skill">
-                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Document and System Control</span>
+                            <span class="text-xs font-black uppercase tracking-[0.2em] text-navy italic border-b-2 border-slate-100 pb-2 block">LOGISTICS & SUPPLY CHAIN</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
+        </article>
+            
         <!-- SECTION KOMPETENSI -->
         <section id="competence" class="bg-dark-navy py-24 relative">
             <div class="max-w-6xl mx-auto px-8">
