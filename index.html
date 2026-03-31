@@ -190,66 +190,68 @@
 </section>
 
     <!-- Ringkasan -->
-        <section id="about" class="max-w-6xl mx-auto px-8 py-8>
+        <section id="about" class="max-w-2xl mx-auto px-8 py-16 fade-in">
             
-            <!-- Identitas Utama -->
+            <!-- BAGIAN JUDAL: ABOUT ME (Pemberian Jarak Atas) -->
+        <header class="mb-14">
+            <h1 class="text-6xl font-black italic tracking-tighter text-navy leading-[0.8]">ABOUT</h1>
+            <h1 class="text-6xl font-black italic tracking-tighter text-orange-vibrant leading-[0.8]">ME</h1>
+        </header>
+
+        <!-- LOKASI & SPESIALISASI (Jarak antar elemen ditingkatkan) -->
+        <section class="space-y-10">
+            
+            <!-- Lokasi -->
             <div>
-                <div class="w-12 h-4 bg-orange-vibrant mb-6 rounded-full"></div>
-                <h2 class="text-4xl font-black uppercase tracking-tighter italic leading-none text-navy">
-                    About <br> <span class="text-orange-vibrant">Me</span>
-                </h2>
-            </div>
-
-            <!-- Detail Informasi-->
-            <div class="space-y-6">
-                <div class="profile-item group">
-                    <p class="text-[9px] font-black uppercase tracking-widest text-slate-300 mb-2 italic">Lokasi Sekarang</p>
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="map-pin" class="w-4 h-4 text-orange-vibrant"></i>
-                        <span class="text-sm font-bold text-navy italic">Padang / Murung Raya</span>
-                    </div>
-                </div>
-
-                <div class="profile-item group">
-                    <p class="text-[9px] font-black uppercase tracking-widest text-slate-300 mb-2 italic">Spesialisasi Utama</p>
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="box" class="w-4 h-4 text-orange-vibrant"></i>
-                        <span class="text-sm font-bold text-navy italic">SAP MM, Looker Studio Data,
-                        Microsoft Office, Power BI, HTML</span>
-                    </div>
+                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-300 block mb-3 italic">Lokasi Sekarang</span>
+                <div class="flex items-center gap-3">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-orange-vibrant"></i>
+                    <span class="text-sm font-black text-navy uppercase italic tracking-tight">Padang / Murung Raya</span>
                 </div>
             </div>
-            
-        <!-- KOLOM 2: RINGKASAN (TIPOGRAFI SESUAI GAMBAR) -->
-            <!-- Kalimat Komprehensif -->
-            <div class="custom-border-left pl-8 md:pl-12 py-8">
-                <p class="text-slate-500 text-lg md:text-2xl leading-relaxed font-medium italic">
-                    "Berkomitmen dalam menyelaraskan <span class="text-navy font-bold">integritas operasional</span> 
-                    dengan strategi manajemen rantai pasok yang tangguh. Fokus utama saya adalah memastikan optimalisasi nilai inventori dan akurasi stock gudang 
-                    serta keunggulan eksekusi lapangan demi tercapainya efisiensi biaya dan keberlanjutan operasional pada proyek industri skala besar."
-                </p>
 
-                <!-- Footer / Tag Tambahan -->
-                <div class="mt-12 flex flex-wrap gap-4">
-                    <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
-                        <div class="w-1.5 h-1.5 bg-orange-vibrant rounded-full"></div>
-                        <span class="text-[9px] font-black uppercase tracking-widest text-navy italic">Strategic Leadership</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
-                        <div class="w-1.5 h-1.5 bg-orange-vibrant rounded-full"></div>
-                        <span class="text-[9px] font-black uppercase tracking-widest text-navy italic">Warehouse and Inventory Management</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
-                        <div class="w-1.5 h-1.5 bg-orange-vibrant rounded-full"></div>
-                        <span class="text-[9px] font-black uppercase tracking-widest text-navy italic">Fuel and Oil Management</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
-                        <div class="w-1.5 h-1.5 bg-orange-vibrant rounded-full"></div>
-                        <span class="text-[9px] font-black uppercase tracking-widest text-navy italic">Logistic and Supply Chain Management</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg">
-                        <div class="w-1.5 h-1.5 bg-orange-vibrant rounded-full"></div>
-                        <span class="text-[9px] font-black uppercase tracking-widest text-navy italic">Safety Compliance System</span>
+            <!-- Spesialisasi -->
+            <div class="relative">
+                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-300 block mb-3 italic">Spesialisasi Utama</span>
+                <div class="flex items-start gap-3">
+                    <i data-lucide="box" class="w-4 h-4 text-orange-vibrant mt-1"></i>
+                    <span class="text-sm font-black text-navy uppercase italic leading-relaxed tracking-tight">
+                        SAP MM, Looker Studio Data, Microsoft Office, Power BI, HTML
+                    </span>
+                </div>
+            </div>
+
+            <!-- RINGKASAN & POIN (Dengan Garis Samping Kontinu) -->
+            <div class="flex gap-6 pt-4">
+                <!-- Garis Samping Statis -->
+                <div class="sidebar-line flex-shrink-0"></div>
+                
+                <div class="space-y-12">
+                    <!-- Paragraf Ringkasan -->
+                    <p class="text-slate-400 text-base md:text-lg leading-relaxed font-medium italic">
+                        "Berkomitmen dalam menyelaraskan <span class="text-navy font-bold">integritas operasional</span> dengan strategi manajemen rantai pasok yang tangguh. Fokus utama saya adalah memastikan optimalisasi nilai inventori dan akurasi stock gudang serta keunggulan eksekusi lapangan demi tercapainya efisiensi biaya dan keberlanjutan operasional pada proyek industri skala besar."
+                    </p>
+
+                    <!-- Poin-Poin Keahlian (Jarak antar poin ditingkatkan) -->
+                    <div class="space-y-6 pl-2">
+                        <div class="profile-skill">
+                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Strategic Leadership</span>
+                        </div>
+                        <div class="profile-skill">
+                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Warehouse and Inventory Management</span>
+                        </div>
+                        <div class="profile-skill">
+                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Fuel and Oil Management</span>
+                        </div>
+                        <div class="profile-skill">
+                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Logistic and Supply Chain Management</span>
+                        </div>
+                        <div class="profile-skill">
+                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Safety Compliance System</span>
+                        </div>
+                        <div class="profile-skill">
+                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-navy italic block">Document and System Control</span>
+                        </div>
                     </div>
                 </div>
             </div>
