@@ -102,31 +102,34 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #ffffff;
             color: #1e293b;
+            overflow-x: hidden;
         }
 
-        /* Tipografi Sesuai Gambar */
         .text-navy { color: #1e3a8a; }
         .text-orange-vibrant { color: #f97316; }
 
-        .custom-border-left {
-            border-left: 4px solid #f97316;
+        /* Garis Oranye Samping yang Lebih Berjarak */
+        .sidebar-line {
+            width: 4px;
+            background-color: #f97316;
+            border-radius: 99px;
+            margin-right: 2.5rem; /* Memberi jarak antara garis dan teks */
         }
 
+        /* Animasi */
         .fade-in {
             animation: fadeIn 1s ease-out forwards;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
-        /* Hover effect untuk info profil */
-        .profile-item {
-            transition: all 0.3s ease;
-        }
-        .profile-item:hover {
-            padding-left: 8px;
-            color: #f97316;
+        /* Custom spacing for labels */
+        .label-spacing {
+            letter-spacing: 0.3em;
+            margin-bottom: 0.75rem;
+            display: block;
         }
     </style>
 </head>
@@ -190,7 +193,7 @@
 </section>
 
     <!-- Ringkasan -->
-        <section id="about" class="max-w-2xl mx-auto px-8 py-16 fade-in">
+        <section id="about" class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-start fade-in">
             
             <!-- BAGIAN JUDAL: ABOUT ME (Pemberian Jarak Atas) -->
         <header class="mb-14">
