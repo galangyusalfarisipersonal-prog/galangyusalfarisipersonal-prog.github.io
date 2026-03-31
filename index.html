@@ -98,6 +98,43 @@
         .custom-scroll::-webkit-scrollbar { width: 4px; }
         .custom-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #ffffff;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .text-navy { color: #1e3a8a; }
+        .text-orange-vibrant { color: #f97316; }
+
+        /* Sidebar Accent */
+        .sidebar-line {
+            width: 4px;
+            background-color: #f97316;
+            border-radius: 99px;
+            flex-shrink: 0;
+        }
+
+        /* Tipografi Fluid: Agar tidak bertumpuk di layar laptop */
+        .fluid-heading {
+            font-size: clamp(3.5rem, 11vw, 8.5rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stat-card {
+            border-top: 1px solid #f1f5f9;
+            padding-top: 2rem;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -159,6 +196,81 @@
     </div>
 </section>
 
+        <!-- SECTION ABOUT ME -->
+    <section id="about" class="max-w-6xl mx-auto px-8 py-16 md:py-24 fade-in">
+        
+        <!-- HEADER: Judul Visual -->
+        <header class="mb-14">
+            <h1 class="fluid-heading font-black uppercase text-navy italic">ABOUT</h1>
+            <h1 class="fluid-heading font-black uppercase text-orange-vibrant italic">ME</h1>
+        </header>
+
+        <!-- INFO BAR: Lokasi & Keahlian -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+            <div class="flex items-start gap-4">
+                <div class="p-3 bg-orange-50 rounded-xl">
+                    <i data-lucide="map-pin" class="w-6 h-6 text-orange-vibrant"></i>
+                </div>
+                <div>
+                    <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-300 block mb-1 italic">LOKASI SEKARANG</span>
+                    <span class="text-base font-black text-navy uppercase italic">Padang / Murung Raya</span>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="p-3 bg-blue-50 rounded-xl">
+                    <i data-lucide="terminal" class="w-6 h-6 text-navy"></i>
+                </div>
+                <div>
+                    <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-300 block mb-1 italic">KEAHLIAN SISTEM</span>
+                    <span class="text-base font-semibold text-navy italic leading-relaxed">
+                        SAP MM, Microsoft Office, Looker Data Studio, Power BI Desktop, Programming HTML
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ISI KONTEN UTAMA -->
+        <div class="flex gap-6 md:gap-12 items-stretch">
+            <!-- Sidebar Line -->
+            <div class="sidebar-line"></div>
+            
+            <div class="space-y-16 w-full">
+                <!-- Deskripsi Naratif -->
+                <p class="text-slate-500 text-xl md:text-3xl leading-relaxed font-medium italic max-w-5xl">
+                    "Berkomitmen dalam menyelaraskan <span class="text-navy font-bold">integritas operasional</span> dengan strategi manajemen rantai pasok yang tangguh. Fokus utama saya adalah memastikan optimalisasi nilai inventori dan akurasi stock gudang demi tercapainya efisiensi biaya pada proyek industri skala besar."
+                </p>
+
+                <!-- GRID STATISTIK: Karir, Safety, IPK -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 stat-card">
+                    <div>
+                        <span class="block text-5xl font-black italic text-navy leading-none">04+</span>
+                        <span class="text-[8px] uppercase font-bold text-slate-400 tracking-widest italic mt-3 block">TAHUN DI DUNIA PERTAMBANGAN</span>
+                    </div>
+                    <div>
+                        <span class="block text-5xl font-black italic text-navy leading-none">100%</span>
+                        <span class="text-[8px] uppercase font-bold text-slate-400 tracking-widest italic mt-3 block">SAFETY COMPLIANCE</span>
+                    </div>
+                    <div>
+                        <span class="block text-5xl font-black italic text-navy leading-none">3.79</span>
+                        <span class="text-[8px] uppercase font-bold text-slate-400 tracking-widest italic mt-3 block">IPK TEKNIK INDUSTRI IPB</span>
+                    </div>
+                </div>
+
+                <!-- TAGS KOMPETENSI -->
+                <div class="flex flex-wrap gap-3 pt-4">
+                    <div class="px-5 py-2 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="text-[9px] font-black text-navy uppercase italic tracking-widest">Strategic Leadership</span>
+                    </div>
+                    <div class="px-5 py-2 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="text-[9px] font-black text-navy uppercase italic tracking-widest">Team Work</span>
+                    </div>
+                    <div class="px-5 py-2 bg-slate-50 rounded-lg border border-slate-100">
+                        <span class="text-[9px] font-black text-navy uppercase italic tracking-widest">Continuous Improvement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
         <!-- SECTION KOMPETENSI -->
         <section id="competence" class="bg-dark-navy py-24 relative">
