@@ -135,6 +135,49 @@
             border-top: 1px solid #f1f5f9;
             padding-top: 2rem;
         }
+        .custom-section-wrapper { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        background-color: #ffffff;
+        color: #0a192f;
+    }
+    .text-navy { color: #0a192f; }
+    .bg-navy { background-color: #0a192f; }
+    .text-orange { color: #f97316; }
+    .bg-orange { background-color: #f97316; }
+    .italic-black { font-weight: 800; font-style: italic; }
+    
+    .section-tag {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: #f97316;
+        margin-bottom: 1rem;
+        display: block;
+        font-style: italic;
+    }
+
+    .card-shadow-custom {
+        box-shadow: 0 20px 50px -12px rgba(10, 25, 47, 0.1);
+    }
+
+    .hover-lift-effect {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .hover-lift-effect:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 60px -15px rgba(10, 25, 47, 0.15);
+    }
+    
+    .grid-stagger > div:nth-child(even) {
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .grid-stagger > div:nth-child(even) {
+            margin-top: 0;
+        }
+    }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -474,43 +517,235 @@
 
         </div>
 </section>
+    <div class="custom-section-wrapper pb-20">
+    
+    <!-- SECTION PENDIDIKAN -->
+    <section id="pendidikan" class="max-w-7xl mx-auto px-6 py-16">
+        <span class="section-tag">Academic Background</span>
+        <h2 class="text-4xl italic-black text-navy uppercase mb-12 tracking-tight">Pendidikan & Akademis</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="p-10 bg-white border border-slate-100 rounded-[48px] card-shadow-custom hover-lift-effect group">
+                <div class="flex justify-between items-start mb-12">
+                    <div class="p-5 bg-navy text-white rounded-3xl group-hover:bg-orange transition-colors duration-500">
+                        <i data-lucide="graduation-cap" class="w-8 h-8"></i>
+                    </div>
+                    <span class="text-[11px] font-black text-slate-300 italic uppercase tracking-widest">2017 — 2021</span>
+                </div>
+                <h3 class="italic-black text-3xl text-navy uppercase leading-none mb-3">Teknik Industri Pertanian</h3>
+                <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-10">IPB University</p>
+                <div class="flex items-center gap-6 mb-12">
+                    <div class="bg-navy p-6 rounded-[32px] text-white grow">
+                        <p class="text-[9px] font-bold uppercase tracking-[0.3em] opacity-50 mb-1">Cumulative GPA</p>
+                        <div class="flex items-end gap-1">
+                            <span class="text-5xl italic-black tracking-tighter">3.79</span>
+                            <span class="text-xs font-bold opacity-70 pb-2">/ 4.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Achievements -->
-    <section id="achievements" class="py-24 gradient-bg text-white">
-        <div class="container mx-auto px-6">
-            <div class="bg-yellow-400/10 border border-yellow-400/30 rounded-3xl p-12 text-center max-w-5xl mx-auto">
-                <i class="fas fa-trophy text-6xl accent-gold mb-6"></i>
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 italic">JUARA 1 Quality Control Project</h2>
-                <p class="text-xl mb-8 font-light italic">"Part Utilization by managing backlog using web-based monitoring system"</p>
-                <div class="flex flex-wrap justify-center gap-4 text-sm font-bold uppercase tracking-widest">
-                    <span class="bg-white/10 px-6 py-2 rounded-full border border-white/20">PT. Hasnur Riung Sinergi</span>
-                    <span class="bg-white/10 px-6 py-2 rounded-full border border-white/20">Innovaction Award</span>
+            <div class="p-10 bg-slate-50 border border-slate-100 rounded-[48px] hover-lift-effect">
+                <div class="flex justify-between items-start mb-12">
+                    <div class="p-5 bg-white border border-slate-100 rounded-3xl text-navy">
+                        <i data-lucide="school" class="w-8 h-8"></i>
+                    </div>
+                    <span class="text-[11px] font-black text-slate-300 italic uppercase tracking-widest">2014 — 2017</span>
+                </div>
+                <h3 class="italic-black text-3xl text-navy uppercase leading-none mb-3">SMA Negeri Agam Cendekia</h3>
+                <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-10">Jurusan IPA</p>
+                <div class="bg-white p-6 rounded-[32px] border border-slate-200">
+                    <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-400 mb-1">Academic Average</p>
+                    <div class="flex items-end gap-1 text-navy">
+                        <span class="text-5xl italic-black tracking-tighter">94.3</span>
+                        <span class="text-sm font-bold opacity-40 pb-2">/ 100.00</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certification Section -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Sertifikasi Keahlian</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="border border-slate-200 p-8 rounded-xl hover:border-yellow-400 transition cursor-default">
-                    <div class="text-yellow-500 font-bold mb-2">BNSP - Mar 2023</div>
-                    <h5 class="text-lg font-bold">Pengawas Operasional Pertama (POP)</h5>
+    <!-- SECTION SERTIFIKASI -->
+    <section id="sertifikasi" class="bg-navy py-24 text-white relative overflow-hidden my-8 rounded-[60px] mx-6">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span class="section-tag !text-orange">Professional Credentials</span>
+                    <h2 class="italic-black text-5xl md:text-7xl uppercase tracking-tighter">Lisensi & <span class="text-orange">Sertifikasi</span></h2>
                 </div>
-                <div class="border border-slate-200 p-8 rounded-xl hover:border-yellow-400 transition cursor-default">
-                    <div class="text-yellow-500 font-bold mb-2">BNSP - Apr 2024</div>
-                    <h5 class="text-lg font-bold">I-SMKP (Sistem Manajemen Keselamatan)</h5>
+                <a href="#" class="px-8 py-4 bg-orange hover:bg-white hover:text-navy transition-all duration-300 rounded-full text-[11px] font-black uppercase italic tracking-widest flex items-center gap-3">
+                    <i data-lucide="external-link" class="w-4 h-4"></i> Lihat Semua Sertifikat
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Sertifikasi List -->
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Junior Trainer Lvl 3</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">BNSP • 2025</p>
                 </div>
-                <div class="border border-slate-200 p-8 rounded-xl hover:border-yellow-400 transition cursor-default">
-                    <div class="text-yellow-500 font-bold mb-2">BNSP - Apr 2024</div>
-                    <h5 class="text-lg font-bold">PPLB3 (Pengelolaan Limbah B3)</h5>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Pemantauan & Pengelolaan Limbah B3</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">BNSP • 2024</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Implementasi SMKP</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">BNSP • 2024</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Empowering Leadership Program</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">Kubik Leadership • 2024</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Pengawas Operasional Pertama (POP)</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">BNSP • 2023</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Dasar-dasar Supervisi Tambang</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">SIM • 2022</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Procurement & Supply Chain Management</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">PPM Management • 2022</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Warehouse & Inventory Management</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">PPM Management • 2022</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-[32px] hover:bg-white/10 transition-all">
+                    <h4 class="text-xs italic-black uppercase mb-2">Kompetensi Dasar Operasional Tambang</h4>
+                    <p class="text-[9px] font-black text-orange uppercase tracking-widest italic">SIM • 2022</p>
+                </div>
+            </div>
+
+            <!-- Organisasi List -->
+            <div class="mt-20 pt-10 border-t border-white/10">
+                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-6 block italic">Kepemimpinan & Organisasi</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="w-2 h-2 rounded-full bg-orange"></div>
+                        <div>
+                            <p class="text-[11px] font-black uppercase italic">Himpunan Mahasiswa TIN IPB</p>
+                            <p class="text-[9px] text-white/50 uppercase tracking-widest">Staff Academic & Student Achievement • 2019-2020</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="w-2 h-2 rounded-full bg-orange"></div>
+                        <div>
+                            <p class="text-[11px] font-black uppercase italic">Paguyuban Bidik Misi IPB</p>
+                            <p class="text-[9px] text-white/50 uppercase tracking-widest">Koordinator Pengembangan Sumber Daya Mahasiswa • 2018-2019</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="w-2 h-2 rounded-full bg-orange"></div>
+                        <div>
+                            <p class="text-[11px] font-black uppercase italic">Agrisymphony IPB</p>
+                            <p class="text-[9px] text-white/50 uppercase tracking-widest">Staff Divisi K3 • 2018</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="w-2 h-2 rounded-full bg-orange"></div>
+                        <div>
+                            <p class="text-[11px] font-black uppercase italic">Olimpiade Mahasiswa IPB</p>
+                            <p class="text-[9px] text-white/50 uppercase tracking-widest">Staff Divisi Konsumsi • 2018</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SECTION PRESTASI -->
+    <section id="prestasi" class="max-w-7xl mx-auto px-6 py-16">
+        <span class="section-tag">Awards & Honors</span>
+        <h2 class="text-4xl italic-black text-navy uppercase mb-12 tracking-tight">Prestasi Utama</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- P1 -->
+            <div class="p-8 bg-white border border-slate-100 rounded-[40px] card-shadow-custom hover-lift-effect">
+                <span class="text-[9px] font-black text-orange uppercase italic tracking-widest mb-4 block">Sep 2023</span>
+                <h4 class="italic-black text-xl text-navy uppercase leading-tight mb-4">1st Place Quality Control Project</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-6">Managing backlog using web-based monitoring system at PT Berau Coal BMO1.</p>
+                <p class="text-[9px] font-bold text-slate-400 uppercase">PT. HASNUR RIUNG SINERGI</p>
+            </div>
+            <!-- P2 -->
+            <div class="p-8 bg-white border border-slate-100 rounded-[40px] card-shadow-custom hover-lift-effect">
+                <span class="text-[9px] font-black text-orange uppercase italic tracking-widest mb-4 block">Des 2020</span>
+                <h4 class="italic-black text-xl text-navy uppercase leading-tight mb-4">Top 25 Finalists Student Startup</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-6">Held by Indonesian Ministry of Education and Culture (Kemdikbudristek).</p>
+                <p class="text-[9px] font-bold text-slate-400 uppercase">Sahabat Tutor</p>
+            </div>
+            <!-- P3 -->
+            <div class="p-8 bg-white border border-slate-100 rounded-[40px] card-shadow-custom hover-lift-effect">
+                <span class="text-[9px] font-black text-orange uppercase italic tracking-widest mb-4 block">Okt 2020</span>
+                <h4 class="italic-black text-xl text-navy uppercase leading-tight mb-4">BMC Finalist UNAND Economics</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-6">Business Model Canvas competition on Faculty Anniversary.</p>
+                <p class="text-[9px] font-bold text-slate-400 uppercase">IPB University</p>
+            </div>
+            <!-- P4 -->
+            <div class="p-8 bg-white border border-slate-100 rounded-[40px] card-shadow-custom hover-lift-effect">
+                <span class="text-[9px] font-black text-orange uppercase italic tracking-widest mb-4 block">Okt 2019</span>
+                <h4 class="italic-black text-xl text-navy uppercase leading-tight mb-4">2nd Place ICT Business ICON IPB</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-6">Competition in Information and Communication Technology Business.</p>
+                <p class="text-[9px] font-bold text-slate-400 uppercase">IPB University</p>
+            </div>
+            <!-- P5 -->
+            <div class="p-8 bg-white border border-slate-100 rounded-[40px] card-shadow-custom hover-lift-effect">
+                <span class="text-[9px] font-black text-orange uppercase italic tracking-widest mb-4 block">Mar 2019</span>
+                <h4 class="italic-black text-xl text-navy uppercase leading-tight mb-4">Top 10 Scientific Writing UNYSEF</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-6">Research on Parangtritis Gumuk Beach Conservation.</p>
+                <p class="text-[9px] font-bold text-slate-400 uppercase">IPB University</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PUBLIKASI & BAHASA -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Publikasi -->
+            <div>
+                <span class="section-tag">Scientific Contributions</span>
+                <h2 class="text-3xl italic-black text-navy uppercase mb-10 tracking-tight">Publikasi</h2>
+                <div class="space-y-6">
+                    <div class="p-6 border-l-4 border-orange bg-slate-50 rounded-r-3xl">
+                        <h4 class="text-sm italic-black text-navy uppercase mb-2">Schedule Adherence by Particle Swarm Optimization</h4>
+                        <p class="text-[10px] text-slate-500 uppercase font-bold mb-1">IPB • 9 Agustus 2021</p>
+                        <p class="text-[10px] italic text-slate-400">Optimization in Wood Cutting Process</p>
+                    </div>
+                    <div class="p-6 border-l-4 border-navy bg-slate-50 rounded-r-3xl">
+                        <h4 class="text-sm italic-black text-navy uppercase mb-2">Edible Coating Kitosan dari Limbah Tambak Udang</h4>
+                        <p class="text-[10px] text-slate-500 uppercase font-bold mb-1">Jurnal Ilmiah Penalaran • 20 Okt 2019</p>
+                        <p class="text-[10px] italic text-slate-400">Conservation of Gumuk Pasir Parangtritis</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bahasa & Test -->
+            <div>
+                <span class="section-tag">Communication Skills</span>
+                <h2 class="text-3xl italic-black text-navy uppercase mb-10 tracking-tight">Kemampuan Bahasa</h2>
+                <div class="bg-navy p-10 rounded-[48px] text-white">
+                    <div class="mb-8">
+                        <p class="text-[10px] font-black text-orange uppercase tracking-widest mb-4">English Proficiency</p>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                            <span class="text-lg italic-black uppercase">TOEFL ITEP</span>
+                            <span class="text-3xl italic-black text-orange">504</span>
+                        </div>
+                        <p class="text-xs font-medium italic opacity-60">Tingkat Profesional Mahir • Jul 2021</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-black text-orange uppercase tracking-widest mb-4">Native Language</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg italic-black uppercase">Indonesian</span>
+                            <span class="text-xs font-black px-4 py-2 bg-white/10 rounded-full uppercase tracking-widest">Native</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    
     <!-- Image Album / Gallery -->
     <section id="gallery" class="py-24 bg-slate-50">
         <div class="container mx-auto px-6 text-center">
@@ -551,35 +786,6 @@
                     <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000" alt="Quality Control Presentation" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
                         <p class="text-white font-bold">Project Presentation - Best Quality Control</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-bold mb-6 uppercase tracking-tight">Latar Belakang <br>Pendidikan</h2>
-                    <p class="text-slate-500 mb-8 leading-relaxed">Pendidikan yang kuat dalam teknik industri dan agroindustri memberikan landasan berpikir sistematis untuk optimasi rantai pasok.</p>
-                </div>
-                <div class="md:w-1/2 space-y-6">
-                    <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl">
-                        <div class="bg-gold p-3 rounded-lg text-slate-900"><i class="fas fa-university text-xl"></i></div>
-                        <div>
-                            <h4 class="font-bold text-xl">IPB University</h4>
-                            <p class="text-sm text-slate-500 mb-2">S1 Agroindustrial Engineering (2017 - 2021)</p>
-                            <p class="text-xs text-slate-400 italic">Asisten Dosen - Preferensi Algoritma Skyline</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl">
-                        <div class="bg-slate-200 p-3 rounded-lg text-slate-900"><i class="fas fa-school text-xl"></i></div>
-                        <div>
-                            <h4 class="font-bold text-xl">SMA Negeri Agam Cendekia</h4>
-                            <p class="text-sm text-slate-500">Boarding School - Semi-Militer (2014 - 2017)</p>
-                        </div>
                     </div>
                 </div>
             </div>
