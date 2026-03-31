@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
@@ -49,28 +50,54 @@
         .modal-overlay.active .modal-content {
             transform: scale(1);
         }
-        .career-card-visual { 
-        transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-        cursor: pointer;
-    }
-    .career-card-visual:hover { 
-        transform: translateY(-8px);
-        background: white;
-        box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.12);
-        border-color: #f59e0b;
-    }
-    .modal-overlay-career {
-        background: rgba(15, 23, 42, 0.95);
-        backdrop-filter: blur(12px);
-        display: none;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-    .modal-overlay-career.active {
-        display: flex;
-        opacity: 1;
-    }
-    .bg-dark-navy { background-color: #0f172a; }
+         /* Animasi Kartu */
+        .card-job-mini {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid #f1f5f9;
+        }
+        .card-job-mini:hover {
+            transform: translateY(-5px);
+            border-color: #f59e0b;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Overlay Modal */
+        .overlay-job {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .overlay-job.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Box Modal */
+        .popup-box {
+            transform: scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-width: 480px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .overlay-job.active .popup-box {
+            transform: scale(1);
+        }
+
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -239,84 +266,116 @@
     </div>
 
     <!-- Grid Kartu Pengalaman -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- 1. WAREHOUSE GL - BORNEO PRIMA -->
-        <div class="career-card-visual bg-white p-10 rounded-[3rem] border border-slate-100 flex flex-col justify-between" 
-             onclick="openCareerDetail('Warehouse & Inventory Group Leader', 'PT Hasnur Riung Sinergi', '2026 - Sekarang', 'Memimpin operasional pergudangan di Site Borneo Prima, Kalimantan Tengah. Fokus utama pada kepemimpinan tim, sinkronisasi SAP MM, dan pencapaian efisiensi biaya inventori.', 'Kalimantan Tengah', 'briefcase', ['Site Leader', 'SAP MM Specialist', 'Cost Control'])">
-            <div>
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-amber-50 text-amber-600 rounded-2xl"><i data-lucide="briefcase" class="w-8 h-8"></i></div>
-                    <span class="text-[10px] font-black bg-emerald-50 text-emerald-600 px-4 py-2 rounded-full uppercase tracking-widest">Active</span>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            
+            <!-- KARTU 1: HASNUR RIUNG CURRENT -->
+            <div class="card-job-mini bg-white p-6 rounded-3xl" 
+                 onclick="openJob('Warehouse & Inventory GL', 'PT Hasnur Riung Sinergi', '2026 - Sekarang', 'Site Borneo Prima, Kalteng', 'briefcase', 'Memimpin operasional gudang dan manajemen inventori dengan fokus pada akurasi stok dan efisiensi rantai pasok.', ['Mengelola audit stok fisik bulanan', 'Integrasi sistem SAP MM', 'Optimasi biaya penyimpanan'], ['Akurasi stok mencapai 99.9%', 'Digitalisasi laporan harian via Looker Studio'], ['Leadership', 'SAP MM', 'Inventory Strategy'])">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2.5 bg-amber-50 text-amber-600 rounded-xl"><i data-lucide="briefcase" class="w-5 h-5"></i></div>
+                    <span class="text-[8px] font-bold bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-lg uppercase tracking-widest">Active Site</span>
                 </div>
-                <h3 class="text-2xl font-black leading-tight uppercase mb-2">Warehouse & Inventory Group Leader</h3>
-                <p class="text-slate-400 font-bold text-xs uppercase tracking-widest italic">PT Hasnur Riung Sinergi</p>
-            </div>
-            <div class="pt-8 border-t border-slate-50 flex items-center justify-between mt-6">
-                <span class="text-slate-900 font-black text-[10px] uppercase italic">Kalimantan Tengah</span>
-                <span class="text-amber-500 font-black text-xs italic tracking-tighter">2026 — SEKARANG</span>
-            </div>
-        </div>
-
-        <!-- 2. WAREHOUSE GL - BERAU COAL -->
-        <div class="career-card-visual bg-white p-10 rounded-[3rem] border border-slate-100 flex flex-col justify-between" 
-             onclick="openCareerDetail('Warehouse & Inventory Group Leader', 'PT Fajar Anugerah Dinamika', '2023 - 2025', 'Mengelola manajemen pergudangan di Site Berau Coal, Kalimantan Timur. Bertanggung jawab atas ketersediaan material kritis dan memastikan kepatuhan standar keselamatan kerja (POP).', 'Kalimantan Timur', 'warehouse', ['Inventory Accuracy', 'Site Logistics', 'Safety Compliance'])">
-            <div>
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-slate-50 text-slate-400 rounded-2xl"><i data-lucide="warehouse" class="w-8 h-8"></i></div>
+                <h3 class="text-sm font-black text-slate-900 uppercase leading-tight mb-1">Warehouse & Inventory GL</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider mb-4 italic">Hasnur Riung Sinergi</p>
+                
+                <!-- Gambaran Peran di Depan -->
+                <div class="bg-slate-50 p-4 rounded-2xl mb-4">
+                    <p class="text-[10px] text-slate-500 font-medium leading-relaxed italic line-clamp-2">
+                        Memimpin operasional gudang dan manajemen inventori dengan fokus pada akurasi stok dan efisiensi rantai pasok.
+                    </p>
                 </div>
-                <h3 class="text-2xl font-black leading-tight uppercase mb-2">Warehouse & Inventory Group Leader</h3>
-                <p class="text-slate-400 font-bold text-xs uppercase tracking-widest italic">PT Fajar Anugerah Dinamika</p>
-            </div>
-            <div class="pt-8 border-t border-slate-50 flex items-center justify-between mt-6">
-                <span class="text-slate-900 font-black text-[10px] uppercase italic">Kalimantan Timur</span>
-                <span class="text-slate-400 font-black text-xs italic tracking-tighter">2023 — 2025</span>
-            </div>
-        </div>
 
-        <!-- 3. FGDP PROCUREMENT -->
-        <div class="career-card-visual bg-white p-10 rounded-[3rem] border border-slate-100 flex flex-col justify-between" 
-             onclick="openCareerDetail('FGDP Procurement & Logistic', 'PT Hasnur Riung Sinergi', '2022 - 2023', 'Program akselerasi manajemen di Site Antang Gunung Meratus. Mengelola siklus pengadaan barang operasional serta distribusi bahan bakar dan pelumas (Fuel & Oil).', 'Kalimantan Selatan', 'truck', ['Fuel Distribution', 'Procurement', 'Vendor Management'])">
-            <div>
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-slate-50 text-slate-400 rounded-2xl"><i data-lucide="truck" class="w-8 h-8"></i></div>
+                <div class="flex justify-between items-center text-[9px] font-bold uppercase text-slate-400 border-t border-slate-50 pt-4">
+                    <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Kalteng</span>
+                    <span class="text-amber-600 italic">2026 - SKRG</span>
                 </div>
-                <h3 class="text-2xl font-black leading-tight uppercase mb-2">FGDP Procurement & Logistic</h3>
-                <p class="text-slate-400 font-bold text-xs uppercase tracking-widest italic">PT Hasnur Riung Sinergi</p>
             </div>
-            <div class="pt-8 border-t border-slate-50 flex items-center justify-between mt-6">
-                <span class="text-slate-900 font-black text-[10px] uppercase italic">Kalimantan Selatan</span>
-                <span class="text-slate-400 font-black text-xs italic tracking-tighter">2022 — 2023</span>
-            </div>
-        </div>
 
-        <!-- 4. SHOPEE SEGAR -->
-        <div class="career-card-visual bg-white p-10 rounded-[3rem] border border-slate-100 flex flex-col justify-between" 
-             onclick="openCareerDetail('Business Development Project', 'Shopee International Indonesia', '2021 - 2022', 'Terlibat dalam pengembangan bisnis Shopee Segar di Jakarta. Meliputi pencarian pemasok (sourcing) produk segar dan analisis potensi pasar mingguan.', 'Jakarta', 'shopping-bag', ['Market Analysis', 'Sourcing', 'Project Development'])">
-            <div>
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-slate-50 text-slate-400 rounded-2xl"><i data-lucide="shopping-bag" class="w-8 h-8"></i></div>
+            <!-- KARTU 2: FAJAR ANUGERAH -->
+            <div class="card-job-mini bg-white p-6 rounded-3xl" 
+                 onclick="openJob('Warehouse & Inventory GL', 'PT Fajar Anugerah Dinamika', '2023 - 2025', 'Site Berau Coal, Kaltim', 'warehouse', 'Bertanggung jawab atas ketersediaan material kritis dan kepatuhan standar operasional keselamatan kerja di site.', ['Manajemen ketersediaan sparepart unit', 'Pengawasan inbound/outbound material', 'Implementasi K3 di area gudang'], ['Penurunan rasio deadstock sebesar 15%', 'Zero accident di area kerja selama 2 tahun'], ['Safety POP', 'Logistics', 'Warehouse MGMT'])">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2.5 bg-slate-50 text-slate-400 rounded-xl"><i data-lucide="warehouse" class="w-5 h-5"></i></div>
                 </div>
-                <h3 class="text-2xl font-black leading-tight uppercase mb-2">Business Dev. Shopee Segar</h3>
-                <p class="text-slate-400 font-bold text-xs uppercase tracking-widest italic">Shopee Indonesia</p>
-            </div>
-            <div class="pt-8 border-t border-slate-50 flex items-center justify-between mt-6">
-                <span class="text-slate-900 font-black text-[10px] uppercase italic">Jakarta</span>
-                <span class="text-slate-400 font-black text-xs italic tracking-tighter">2021 — 2022</span>
-            </div>
-        </div>
+                <h3 class="text-sm font-black text-slate-900 uppercase leading-tight mb-1">Warehouse & Inventory GL</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider mb-4 italic">Fajar Anugerah Dinamika</p>
+                
+                <div class="bg-slate-50 p-4 rounded-2xl mb-4">
+                    <p class="text-[10px] text-slate-500 font-medium leading-relaxed italic line-clamp-2">
+                        Bertanggung jawab atas ketersediaan material kritis dan kepatuhan standar operasional keselamatan kerja di site.
+                    </p>
+                </div>
 
-        <!-- 5. ASISTEN DOSEN IPB -->
-        <div class="career-card-visual bg-white p-10 rounded-[3rem] border border-slate-100 md:col-span-2 flex flex-col md:flex-row gap-8 items-center" 
-             onclick="openCareerDetail('Asisten Dosen & Peneliti', 'IPB University', '2018 - 2021', 'Berperan aktif dalam mendukung kegiatan akademis di kelas serta melakukan pengolahan data riset untuk publikasi jurnal ilmiah selama masa studi.', 'Bogor', 'graduation-cap', ['Academic Research', 'Teaching', 'Data Processing'])">
-            <div class="p-5 bg-slate-50 text-slate-400 rounded-[2rem]"><i data-lucide="graduation-cap" class="w-10 h-10"></i></div>
-            <div class="flex-1 text-center md:text-left">
-                <h3 class="text-2xl font-black uppercase mb-1">Asisten Dosen & Penelitian Jurnal</h3>
-                <p class="text-slate-400 font-bold text-xs uppercase tracking-widest italic mb-4">IPB University • Bogor</p>
-                <span class="text-slate-400 font-black text-xs italic">2018 — 2021</span>
+                <div class="flex justify-between items-center text-[9px] font-bold uppercase text-slate-400 border-t border-slate-50 pt-4">
+                    <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Kaltim</span>
+                    <span>2023 - 2025</span>
+                </div>
             </div>
+
+            <!-- KARTU 3: FGDP -->
+            <div class="card-job-mini bg-white p-6 rounded-3xl" 
+                 onclick="openJob('FGDP Procurement & Logistic', 'PT Hasnur Riung Sinergi', '2022 - 2023', 'Site AGM, Kalsel', 'truck', 'Mengelola manajemen rantai pasok dan logistik bahan bakar (Fuel & Oil) untuk menunjang produktivitas unit.', ['Pengadaan barang operasional harian', 'Pengawasan distribusi bahan bakar unit', 'Analisis kebutuhan logistik site'], ['Efisiensi konsumsi BBM sebesar 8%', 'Penyelesaian program FGDP dengan predikat memuaskan'], ['Supply Chain', 'Fuel Management', 'Procurement'])">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2.5 bg-slate-50 text-slate-400 rounded-xl"><i data-lucide="truck" class="w-5 h-5"></i></div>
+                </div>
+                <h3 class="text-sm font-black text-slate-900 uppercase leading-tight mb-1">FGDP Procurement & Log</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider mb-4 italic">Hasnur Riung Sinergi</p>
+                
+                <div class="bg-slate-50 p-4 rounded-2xl mb-4">
+                    <p class="text-[10px] text-slate-500 font-medium leading-relaxed italic line-clamp-2">
+                        Mengelola manajemen rantai pasok dan logistik bahan bakar (Fuel & Oil) untuk menunjang produktivitas unit.
+                    </p>
+                </div>
+
+                <div class="flex justify-between items-center text-[9px] font-bold uppercase text-slate-400 border-t border-slate-50 pt-4">
+                    <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Kalsel</span>
+                    <span>2022 - 2023</span>
+                </div>
+            </div>
+
+            <!-- KARTU 4: SHOPEE -->
+            <div class="card-job-mini bg-white p-6 rounded-3xl" 
+                 onclick="openJob('Business Dev Project', 'Shopee Indonesia', '2021 - 2022', 'Jakarta (HQ)', 'shopping-bag', 'Fokus pada ekspansi kategori produk segar melalui kemitraan strategis dengan supplier lokal.', ['Sourcing supplier produk fresh', 'Analisis harga pasar kompetitor', 'Monitoring performa SKU'], ['Akuisisi 30+ vendor baru dalam 6 bulan', 'Kontribusi pertumbuhan GMV kategori Segar'], ['Market Analysis', 'Vendor Sourcing', 'Business Dev'])">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2.5 bg-slate-50 text-slate-400 rounded-xl"><i data-lucide="shopping-bag" class="w-5 h-5"></i></div>
+                </div>
+                <h3 class="text-sm font-black text-slate-900 uppercase leading-tight mb-1">Business Dev Shopee Segar</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider mb-4 italic">Shopee International</p>
+                
+                <div class="bg-slate-50 p-4 rounded-2xl mb-4">
+                    <p class="text-[10px] text-slate-500 font-medium leading-relaxed italic line-clamp-2">
+                        Fokus pada ekspansi kategori produk segar melalui kemitraan strategis dengan supplier lokal.
+                    </p>
+                </div>
+
+                <div class="flex justify-between items-center text-[9px] font-bold uppercase text-slate-400 border-t border-slate-50 pt-4">
+                    <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Jakarta</span>
+                    <span>2021 - 2022</span>
+                </div>
+            </div>
+
+            <!-- KARTU 5: IPB -->
+            <div class="card-job-mini bg-white p-6 rounded-3xl sm:col-span-2" 
+                 onclick="openJob('Asisten Dosen & Peneliti', 'IPB University', '2018 - 2021', 'Kampus Dramaga, Bogor', 'graduation-cap', 'Mendukung riset akademis dan proses belajar mengajar serta manajemen data penelitian publikasi.', ['Asistensi praktikum mahasiswa', 'Pengolahan data riset lapangan', 'Penyusunan draft laporan penelitian'], ['Publikasi bersama dalam 2 jurnal nasional', 'Manajemen data riset untuk 3 proyek besar'], ['Data Analysis', 'Academic Writing', 'Research'])">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="p-3 bg-slate-50 text-slate-400 rounded-2xl h-fit w-fit"><i data-lucide="graduation-cap" class="w-6 h-6"></i></div>
+                    <div class="flex-1">
+                        <h3 class="text-sm font-black text-slate-900 uppercase mb-1">Asisten Dosen & Peneliti Jurnal</h3>
+                        <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider mb-4 italic">IPB University</p>
+                        <div class="bg-slate-50 p-4 rounded-2xl">
+                            <p class="text-[10px] text-slate-500 font-medium leading-relaxed italic">
+                                Mendukung riset akademis dan proses belajar mengajar serta manajemen data penelitian untuk kebutuhan publikasi jurnal ilmiah nasional.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row md:flex-col justify-between items-end text-[9px] font-bold uppercase text-slate-400">
+                        <span>Bogor, Jabar</span>
+                        <span>2018 - 2021</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
 </section>
 
     <!-- Achievements -->
@@ -578,82 +637,135 @@
             lucide.createIcons();
         }
     </script>
-    <!-- MODAL DETAIL KARIR -->
-<div id="modal-career" class="modal-overlay-career fixed inset-0 z-[100] items-center justify-center p-6" onclick="closeCareerModal()">
-    <div class="bg-white w-full max-w-2xl rounded-[3.5rem] shadow-2xl overflow-hidden relative flex flex-col" onclick="event.stopPropagation()">
-        
-        <!-- Header Modal (Sisi Gelap) -->
-        <div class="bg-dark-navy p-10 md:p-14 text-white relative">
-            <div id="m-icon-box" class="w-16 h-16 bg-amber-500 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-amber-500/20">
-                <i id="m-icon-exp" data-lucide="briefcase" class="w-8 h-8 text-white"></i>
-            </div>
-            <span id="m-date-exp" class="text-amber-500 font-black text-[10px] uppercase tracking-[0.2em] mb-2 block italic">2026 - SEKARANG</span>
-            <h2 id="m-title-exp" class="text-2xl md:text-3xl font-black uppercase tracking-tighter leading-tight italic">Judul Posisi</h2>
-            <p id="m-company-exp" class="mt-2 text-slate-400 font-bold text-sm uppercase tracking-widest italic">Nama Perusahaan</p>
-            <div class="absolute top-12 right-12 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-md hidden md:flex items-center gap-2">
-                <i data-lucide="map-pin" class="w-3 h-3 text-amber-500"></i>
-                <span id="m-location-exp" class="text-[10px] font-black uppercase tracking-widest">Lokasi</span>
-            </div>
-        </div>
-
-        <!-- Body Modal (Sisi Terang) -->
-        <div class="p-10 md:p-14 bg-white flex-1">
-            <div class="space-y-8">
-                <div>
-                    <h4 class="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4 italic">Gambaran Strategis Peran</h4>
-                    <p id="m-desc-exp" class="text-slate-600 text-lg font-medium leading-relaxed italic">Penjelasan detail...</p>
+    <!-- MODAL POP-UP TERSTRUKTUR -->
+    <div id="jobPopUp" class="overlay-job" onclick="closeJob()">
+        <div class="popup-box bg-white rounded-[2.5rem] shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+            
+            <!-- Header Modal -->
+            <div class="bg-slate-900 p-8 text-white relative">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-500/20">
+                        <i id="p-icon" data-lucide="briefcase" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <button onclick="closeJob()" class="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-400"></i>
+                    </button>
                 </div>
-                <div>
-                    <h4 class="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4 italic">Keahlian Terapan</h4>
-                    <div id="m-tags-exp" class="flex flex-wrap gap-2">
-                        <!-- Tags diisi via JS -->
+                
+                <div class="space-y-1">
+                    <div class="flex items-center gap-2 text-amber-500 font-black text-[8px] uppercase tracking-[0.2em] italic mb-1">
+                        <i data-lucide="calendar" class="w-3 h-3"></i>
+                        <span id="p-date">Tahun</span>
+                    </div>
+                    <h2 id="p-title" class="text-xl font-black uppercase tracking-tight italic leading-tight">Judul Posisi</h2>
+                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2">
+                        <p id="p-company" class="text-slate-400 font-bold text-[10px] uppercase tracking-widest italic">Perusahaan</p>
+                        <div class="flex items-center gap-1.5 text-slate-500 font-bold text-[9px] uppercase italic">
+                            <i data-lucide="map-pin" class="w-3 h-3 text-amber-500"></i>
+                            <span id="p-loc">Lokasi</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TOMBOL KEMBALI -->
-            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center">
-                <button onclick="closeCareerModal()" class="flex items-center gap-3 bg-slate-900 text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/20">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Kembali ke Daftar
-                </button>
+            <!-- Body Modal -->
+            <div class="p-8 overflow-y-auto custom-scroll space-y-8">
+                
+                <!-- Tanggung Jawab -->
+                <div class="space-y-4">
+                    <h4 class="text-[8px] font-black text-slate-300 uppercase tracking-[0.3em] italic flex items-center gap-2">
+                        <div class="w-1 h-1 bg-amber-500"></div> Fungsi & Tanggung Jawab
+                    </h4>
+                    <ul id="p-tasks" class="space-y-2">
+                        <!-- Items via JS -->
+                    </ul>
+                </div>
+
+                <!-- Pencapaian -->
+                <div class="space-y-4">
+                    <h4 class="text-[8px] font-black text-slate-300 uppercase tracking-[0.3em] italic flex items-center gap-2">
+                        <div class="w-1 h-1 bg-amber-500"></div> Pencapaian Utama
+                    </h4>
+                    <ul id="p-achievements" class="space-y-2">
+                        <!-- Items via JS -->
+                    </ul>
+                </div>
+
+                <!-- Keahlian -->
+                <div class="space-y-4">
+                    <h4 class="text-[8px] font-black text-slate-300 uppercase tracking-[0.3em] italic flex items-center gap-2">
+                        <div class="w-1 h-1 bg-amber-500"></div> Keahlian Teknis
+                    </h4>
+                    <div id="p-tags" class="flex flex-wrap gap-2">
+                        <!-- Tags via JS -->
+                    </div>
+                </div>
+
+                <!-- Tombol Tutup -->
+                <div class="pt-6 border-t border-slate-50">
+                    <button onclick="closeJob()" class="w-full flex items-center justify-center gap-3 bg-slate-900 text-white py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-amber-600 transition-all shadow-xl shadow-slate-900/10 active:scale-[0.98]">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Kembali ke Portfolio
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    function openCareerDetail(title, company, date, desc, location, icon, tags) {
-        const modal = document.getElementById('modal-career');
-        document.getElementById('m-title-exp').innerText = title;
-        document.getElementById('m-company-exp').innerText = company;
-        document.getElementById('m-date-exp').innerText = date;
-        document.getElementById('m-desc-exp').innerText = desc;
-        document.getElementById('m-location-exp').innerText = location;
-        
-        // Ganti Ikon
-        document.getElementById('m-icon-exp').setAttribute('data-lucide', icon);
-        
-        // Render Tags
-        const tagsBox = document.getElementById('m-tags-exp');
-        tagsBox.innerHTML = '';
-        tags.forEach(t => {
-            tagsBox.innerHTML += `<span class="px-4 py-2 bg-amber-50 text-amber-700 rounded-xl text-[9px] font-black uppercase border border-amber-100 tracking-wider">${t}</span>`;
-        });
+    <!-- LOGIKA INTERAKSI -->
+    <script>
+        function openJob(title, company, date, loc, icon, summary, tasks, achievements, tags) {
+            const modal = document.getElementById('jobPopUp');
+            
+            // Set Header
+            document.getElementById('p-title').innerText = title;
+            document.getElementById('p-company').innerText = company;
+            document.getElementById('p-date').innerText = date;
+            document.getElementById('p-loc').innerText = loc;
+            document.getElementById('p-icon').setAttribute('data-lucide', icon);
 
-        lucide.createIcons();
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+            // Render Tanggung Jawab
+            const taskBox = document.getElementById('p-tasks');
+            taskBox.innerHTML = tasks.map(t => `
+                <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-500 mt-0.5 flex-shrink-0"></i>
+                    <span class="text-[11px] text-slate-600 font-medium italic">${t}</span>
+                </li>
+            `).join('');
 
-    function closeCareerModal() {
-        document.getElementById('modal-career').classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
+            // Render Pencapaian
+            const achBox = document.getElementById('p-achievements');
+            achBox.innerHTML = achievements.map(a => `
+                <li class="flex items-start gap-3 bg-amber-50/30 p-3 rounded-xl border border-amber-100/50">
+                    <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600 mt-0.5 flex-shrink-0"></i>
+                    <span class="text-[11px] text-slate-700 font-bold italic">${a}</span>
+                </li>
+            `).join('');
 
-    // Pastikan ikon ter-render saat halaman dimuat
-    document.addEventListener('DOMContentLoaded', () => {
-        if (typeof lucide !== 'undefined') lucide.createIcons();
-    });
+            // Render Tags
+            const tagBox = document.getElementById('p-tags');
+            tagBox.innerHTML = tags.map(t => `
+                <span class="px-3 py-1.5 bg-slate-900 text-white rounded-lg text-[8px] font-black uppercase tracking-wider italic">${t}</span>
+            `).join('');
+
+            // Refresh Icons
+            lucide.createIcons();
+
+            // Open Modal
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeJob() {
+            const modal = document.getElementById('jobPopUp');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 400);
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
 </script>
 </body>
 </html>
