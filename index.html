@@ -1070,36 +1070,43 @@
     </section>
 </div>
     
-    <!--Form Feedback-->
-    <section id="contact" class="py-24 bg-slate-900">
+    <!-- Form Feedback -->
+<section id="contact" class="py-24 bg-slate-900">
     <div class="container mx-auto px-6 max-w-4xl">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-white mb-4">Tertarik Bekerja Sama?</h2>
+            <h2 class="text-4xl font-bold text-white mb-4 italic">Tertarik Bekerja Sama?</h2>
             <p class="text-slate-400 italic">"Saya selalu terbuka untuk diskusi mengenai supply chain, manajemen risiko, atau peluang kolaborasi profesional lainnya."</p>
         </div>
-        <form id ="contact-form" action="https://formsubmit.co/ajax/galangyusalfarisi.personal@gmail.com" method="POST" class="space-y-6 bg-slate-800/50 p-8 md:p-12 rounded-[2.5rem] border border-white/5 shadow-xl">
+        
+        <!-- Form dengan penambahan input hidden untuk pengaturan FormSubmit -->
+        <form id="contact-form" action="https://formsubmit.co/ajax/galangyusalfarisi.personal@gmail.com" method="POST" class="space-y-6 bg-slate-800/50 p-8 md:p-12 rounded-[2.5rem] border border-white/5 shadow-xl">
+            
+            <!-- Pengaturan FormSubmit agar tidak ada Captcha dan tidak pindah halaman -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-xs font-bold text-orange-400 uppercase mb-2 ml-1">Nama Lengkap</label>
+                    <label class="block text-[10px] font-bold text-orange-400 uppercase mb-2 ml-1 tracking-widest">Nama Lengkap</label>
                     <input type="text" name="name" placeholder="Contoh: Galang Yusalfarisi" required 
                            class="w-full p-4 rounded-2xl bg-slate-900 border border-white/10 text-white focus:border-orange-400 outline-none transition">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-orange-400 uppercase mb-2 ml-1">Alamat Email</label>
+                    <label class="block text-[10px] font-bold text-orange-400 uppercase mb-2 ml-1 tracking-widest">Alamat Email</label>
                     <input type="email" name="email" placeholder="email@anda.com" required 
                            class="w-full p-4 rounded-2xl bg-slate-900 border border-white/10 text-white focus:border-orange-400 outline-none transition">
                 </div>
             </div>
             
             <div>
-                <label class="block text-xs font-bold text-orange-400 uppercase mb-2 ml-1">Pesan</label>
+                <label class="block text-[10px] font-bold text-orange-400 uppercase mb-2 ml-1 tracking-widest">Pesan</label>
                 <textarea name="message" rows="5" placeholder="Tuliskan pesan atau tawaran kerja sama di sini..." required 
                           class="w-full p-4 rounded-2xl bg-slate-900 border border-white/10 text-white focus:border-orange-400 outline-none transition"></textarea>
             </div>
 
-            <div class="pt-4 pb-10">
-                <button type="submit" 
-                        class="w-full py-4 bg-orange-400 text-slate-900 font-bold rounded-2xl hover:bg-white hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-orange-400/20">
+            <div class="pt-4">
+                <button type="submit" id="submit-btn"
+                        class="w-full py-5 bg-orange-400 text-slate-900 font-extrabold rounded-2xl hover:bg-white hover:scale-[1.01] active:scale-95 transition-all duration-300 shadow-lg shadow-orange-400/20 uppercase tracking-widest">
                     Kirim Pesan Sekarang
                 </button>
             </div>
@@ -1130,48 +1137,67 @@
             </div>
         </div>
     </footer>
+<!-- Script SweetAlert & Logic -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    // Logika untuk menangkap pengiriman form
     const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
     
     contactForm.addEventListener('submit', function(e) {
-        // Jangan biarkan halaman reload dulu
         e.preventDefault();
 
-        // Ambil data dari form
+        // Tampilan Loading pada tombol
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Sedang Mengirim...";
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
         const formData = new FormData(this);
 
-        // Kirim data ke FormSubmit (atau Formspree) secara background
         fetch(this.action, {
             method: 'POST',
             body: formData,
             headers: {
                 'Accept': 'application/json'
             }
-        }).then(response => {
-            if (response.ok) {
-                // Tampilkan notifikasi sukses yang keren
+        })
+        .then(response => response.json()) // Mengambil respon JSON dari FormSubmit
+        .then(data => {
+            if (data.success === "true" || data.message) {
                 Swal.fire({
                     title: 'Pesan Terkirim!',
-                    text: 'Terima kasih, Saya akan segera menghubungi Anda.',
+                    text: 'Thank You ! Have a Nice Day',
                     icon: 'success',
-                    confirmButtonColor: '#fb923c', // Warna orange sesuai tema Anda
-                    background: '#1e293b', // Warna slate-800 sesuai tema Anda
+                    confirmButtonColor: '#fb923c',
+                    background: '#0f172a', // Background gelap sesuai tema
                     color: '#ffffff',
-                    borderRadius: '20px'
+                    customClass: {
+                        popup: 'rounded-[2rem]'
+                    }
                 });
-                contactForm.reset(); // Kosongkan form setelah kirim
+                contactForm.reset();
             } else {
-                Swal.fire({
-                    title: 'Oops!',
-                    text: 'Terjadi kesalahan, silakan coba lagi.',
-                    icon: 'error'
-                });
+                throw new Error('Gagal');
             }
+        })
+        .catch(error => {
+            Swal.fire({
+                title: 'Gagal Mengirim',
+                text: 'Pastikan koneksi internet aktif dan email aktivasi FormSubmit sudah Bapak klik di inbox.',
+                icon: 'error',
+                confirmButtonColor: '#ef4444',
+                background: '#0f172a',
+                color: '#ffffff'
+            });
+        })
+        .finally(() => {
+            // Kembalikan tombol ke keadaan semula
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Kirim Pesan Sekarang";
+            submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
         });
     });
 </script>
+
 <!-- MODAL POP-UP -->
     <div id="detail-modal" class="modal-overlay fixed inset-0 z-[100] items-center justify-center p-6" onclick="closeModal()">
         <div class="modal-content bg-white w-full max-w-lg p-10 rounded-[2.5rem] shadow-2xl relative" onclick="event.stopPropagation()">
