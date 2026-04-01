@@ -178,6 +178,38 @@
             margin-top: 0;
         }
     }
+        .custom-section-wrapper { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        background-color: #ffffff;
+        color: #0a192f;
+    }
+    .text-navy { color: #0a192f; }
+    .bg-navy { background-color: #0a192f; }
+    .text-orange { color: #f97316; }
+    .bg-orange { background-color: #f97316; }
+    .italic-black { font-weight: 800; font-style: italic; }
+    
+    .section-tag {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: #f97316;
+        margin-bottom: 1rem;
+        display: block;
+        font-style: italic;
+    }
+
+    .card-shadow-custom {
+        box-shadow: 0 20px 50px -12px rgba(10, 25, 47, 0.1);
+    }
+
+    .hover-lift {
+        transition: all 0.3s ease;
+    }
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -455,7 +487,7 @@
 
             <!-- KARTU 3: FGDP -->
             <div class="card-job-mini bg-white p-6 rounded-3xl" 
-                 onclick="openJob('FGDP Procurement & Logistic', 'PT Hasnur Riung Sinergi', '2022 - 2023', 'Site AGM, Kalsel', 'truck', 'Mengikuti program akselerasi leader pada bagian procurement and logistics.', ['Pengadaan barang operasional harian', 'Pengawasan distribusi bahan bakar unit', 'Analisis kebutuhan logistik site'], ['Efisiensi konsumsi BBM sebesar 8%', 'Penyelesaian program FGDP dengan predikat memuaskan'], ['Supply Chain', 'Fuel Management', 'Procurement'])">
+                 onclick="openJob('FGDP Procurement & Logistic', 'PT Hasnur Riung Sinergi', '2022 - 2023', 'Site AGM, Kalsel', 'truck', 'Mengikuti program akselerasi leader pada bagian procurement and logistics.', ['Pengadaan barang operasional harian', 'Pengawasan distribusi bahan bakar unit', 'Analisis kebutuhan logistik site'], ['Peserta FGDP terbaik batch 1 tahun 2022', 'Penyelesaian program FGDP dengan predikat memuaskan'], ['Supply Chain', 'Fuel Management', 'Procurement'])">
                 <div class="flex justify-between items-start mb-4">
                     <div class="p-2.5 bg-slate-50 text-slate-400 rounded-xl"><i data-lucide="truck" class="w-5 h-5"></i></div>
                 </div>
@@ -476,7 +508,7 @@
 
             <!-- KARTU 4: SHOPEE -->
             <div class="card-job-mini bg-white p-6 rounded-3xl" 
-                 onclick="openJob('Business Dev Project', 'Shopee Indonesia', '2021 - 2022', 'Jakarta (HQ)', 'shopping-bag', 'Fokus pada ekspansi kategori produk segar melalui kemitraan strategis dengan supplier lokal.', ['Sourcing supplier produk fresh', 'Analisis harga pasar kompetitor', 'Monitoring performa SKU'], ['Akuisisi 30+ vendor baru dalam 6 bulan', 'Kontribusi pertumbuhan GMV kategori Segar'], ['Market Analysis', 'Vendor Sourcing', 'Business Dev'])">
+                 onclick="openJob('Business Dev Project', 'Shopee Indonesia', '2021 - 2022', 'Jakarta (HQ)', 'shopping-bag', 'Fokus pada ekspansi kategori produk segar melalui kemitraan strategis dengan supplier lokal.', ['Sourcing supplier produk fresh', 'Analisis harga pasar kompetitor', 'Monitoring performa SKU'], ['Akuisisi 30+ vendor baru dalam 3 bulan', 'Kontribusi pertumbuhan GMV kategori Segar'], ['Market Analysis', 'Vendor Sourcing', 'Business Dev'])">
                 <div class="flex justify-between items-start mb-4">
                     <div class="p-2.5 bg-slate-50 text-slate-400 rounded-xl"><i data-lucide="shopping-bag" class="w-5 h-5"></i></div>
                 </div>
@@ -517,6 +549,123 @@
 
         </div>
 </section>
+<div class="custom-section-wrapper">
+
+    <!-- SECTION ASISTEN DOSEN & RISET -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <span class="section-tag">Academic Excellence</span>
+        <h2 class="text-4xl md:text-5xl italic-black text-navy uppercase mb-12 tracking-tight">Asisten Dosen & <span class="text-orange">Riset</span></h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Main Role -->
+            <div class="lg:col-span-4 bg-navy text-white p-10 rounded-[48px] flex flex-col justify-between">
+                <div>
+                    <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="microscope" class="w-8 h-8 text-orange"></i>
+                    </div>
+                    <h3 class="text-2xl italic-black uppercase mb-4 leading-tight">Graduate Research Assistant</h3>
+                    <p class="text-sm text-white/60 mb-6 font-medium italic">Mar 2021 — Agu 2021</p>
+                    <p class="text-xs leading-relaxed opacity-80">Fokus pada pengembangan sistem rekomendasi kuliner lokal Indonesia menggunakan pengolahan data analitik.</p>
+                </div>
+                <div class="mt-12 pt-8 border-t border-white/10">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-orange italic">Institusi</p>
+                    <p class="text-sm font-bold uppercase">IPB University</p>
+                </div>
+            </div>
+
+            <!-- Teaching Assistant Roles -->
+            <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-8 bg-slate-50 border border-slate-100 rounded-[32px] hover-lift">
+                    <span class="text-[9px] font-black text-orange uppercase italic block mb-2">Jan 2021 - Jun 2021</span>
+                    <h4 class="text-sm italic-black text-navy uppercase mb-3">Analysis System and Making Decision</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-[9px] font-bold text-slate-500 uppercase">Teaching</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-[9px] font-bold text-slate-500 uppercase">Algorithms</span>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-slate-50 border border-slate-100 rounded-[32px] hover-lift">
+                    <span class="text-[9px] font-black text-orange uppercase italic block mb-2">Agu 2020 - Jan 2021</span>
+                    <h4 class="text-sm italic-black text-navy uppercase mb-3">Computer Programming Algorithm</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-[9px] font-bold text-slate-500 uppercase">Teaching</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-[9px] font-bold text-slate-500 uppercase">Coding</span>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-slate-50 border border-slate-100 rounded-[32px] hover-lift">
+                    <span class="text-[9px] font-black text-orange uppercase italic block mb-2">Feb 2020 - Jul 2020</span>
+                    <h4 class="text-sm italic-black text-navy uppercase mb-3">Operations Research</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-[9px] font-bold text-slate-500 uppercase">Teaching</span>
+                        <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-[9px] font-bold text-slate-500 uppercase">Optimization</span>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-slate-100 border border-slate-200 rounded-[32px] flex flex-col justify-center items-center text-center">
+                    <i data-lucide="book-open" class="w-6 h-6 text-navy/20 mb-2"></i>
+                    <p class="text-[10px] font-black text-navy/40 uppercase italic tracking-widest">Total 4 Semester</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SOCIOPRENEURSHIP -->
+    <section class="max-w-7xl mx-auto px-6 py-20 bg-slate-50 rounded-[60px] mb-20">
+        <span class="section-tag">Impact & Business</span>
+        <h2 class="text-4xl md:text-5xl italic-black text-navy uppercase mb-12 tracking-tight">Sociopreneur <span class="text-orange">Journey</span></h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Sahabat Tutor -->
+            <div class="bg-white p-10 rounded-[48px] card-shadow-custom relative overflow-hidden group">
+                <div class="flex justify-between items-start mb-10">
+                    <div class="p-4 bg-blue-50 rounded-2xl">
+                        <i data-lucide="users" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <span class="text-[10px] font-black text-slate-300 uppercase italic tracking-widest">2018 — 2021</span>
+                </div>
+                <h3 class="text-3xl italic-black text-navy uppercase mb-4">Sahabat Tutor</h3>
+                <p class="text-xs text-slate-500 italic font-bold uppercase tracking-widest mb-6">Co-Founder | Edutech Startup</p>
+                <p class="text-sm leading-relaxed text-slate-600 mb-10">Platform pemesanan tutor online untuk mahasiswa di seluruh Indonesia. Mengelola materi ajar, mekanisme tutor, dan pusat layanan mitra pengajar.</p>
+                
+                <div class="flex items-center justify-between pt-8 border-t border-slate-100">
+                    <a href=" https://www.instagram.com/sahabattutor?igsh=OHlxb200bmw4cTR1" target="_blank" class="flex items-center gap-3 text-navy hover:text-orange transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <span class="text-[10px] font-black uppercase italic tracking-widest">@sahabattutor</span>
+                    </a>
+                    <div class="flex -space-x-3">
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-300"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-400"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Langkok -->
+            <div class="bg-white p-10 rounded-[48px] card-shadow-custom relative overflow-hidden group">
+                <div class="flex justify-between items-start mb-10">
+                    <div class="p-4 bg-red-50 rounded-2xl">
+                        <i data-lucide="shopping-bag" class="w-8 h-8 text-red-600"></i>
+                    </div>
+                    <span class="text-[10px] font-black text-slate-300 uppercase italic tracking-widest">Jul 2020 — Des 2020</span>
+                </div>
+                <h3 class="text-3xl italic-black text-navy uppercase mb-4">Langkok</h3>
+                <p class="text-xs text-slate-500 italic font-bold uppercase tracking-widest mb-6">Co-Founder | UMKM Association</p>
+                <p class="text-sm leading-relaxed text-slate-600 mb-10">Asosiasi yang menaungi 21 UMKM di Lubuk Basung. Fokus pada strategi pemasaran digital, manajemen media sosial, dan promosi produk unggulan daerah.</p>
+                
+                <div class="flex items-center justify-between pt-8 border-t border-slate-100">
+                    <a href="https://www.instagram.com/langkok_id?igsh=MWd5ZXp0bGI1Nnh4bw==" target="_blank" class="flex items-center gap-3 text-navy hover:text-orange transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <span class="text-[10px] font-black uppercase italic tracking-widest">@langkok.official</span>
+                    </a>
+                    <div class="px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[9px] font-black uppercase italic">Lubuk Basung, Agam</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
     <div class="custom-section-wrapper pb-20">
     
     <!-- SECTION PENDIDIKAN -->
