@@ -299,6 +299,110 @@
     .gallery-item:hover .overlay {
         opacity: 1;
     }
+    /* album baru */
+    .custom-section-wrapper { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        background-color: #ffffff;
+        color: #0a192f;
+    }
+    
+    .centered-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-tag-centered {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: #f97316;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .header-line {
+        height: 5px;
+        width: 70px;
+        background-color: #f97316;
+        margin-top: 1.5rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .gallery-card {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border-radius: 2rem;
+        cursor: pointer;
+        background-color: #f8fafc;
+        transition: all 0.4s ease;
+    }
+
+    .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .gallery-card:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Modal / Overlay saat diklik */
+    #image-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(10, 25, 47, 0.95);
+        z-index: 9999;
+        backdrop-filter: blur(8px);
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    #image-modal.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .modal-content {
+        max-width: 900px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: scale(0.9);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    #image-modal.active .modal-content {
+        transform: scale(1);
+    }
+
+    #modal-img {
+        max-height: 70vh;
+        border-radius: 2rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        margin-bottom: 2rem;
+    }
+
+    .modal-text {
+        text-align: center;
+        color: white;
+    }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -990,95 +1094,57 @@
         
         <!-- Header Terpusat -->
         <div class="centered-header">
-            <span class="section-tag-centered">Activity & Documentation</span>
+            <span class="section-tag-centered">Activity Documentation</span>
             <h2 class="text-4xl md:text-5xl italic-black text-[#0a192f] uppercase tracking-tight">Dokumentasi <span class="text-[#f97316]">& Galeri</span></h2>
             <div class="header-line"></div>
         </div>
 
-        <div class="gallery-container">
-            <!-- Item 1: Besar (Utama) -->
-            <div class="gallery-item tall wide">
-                <img src="foto0.jpeg" alt="Presentasi Proyek Inovasi">
-                <div class="overlay">
-                    <div>
-                        <p class="text-[9px] font-black text-[#f97316] uppercase italic tracking-widest mb-1">Highlight</p>
-                        <p class="text-white text-sm font-bold uppercase italic leading-tight">Sesi Presentasi Inovasi & Strategi</p>
-                    </div>
-                </div>
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <!-- Data foto disertakan dalam atribut data-caption -->
+            <div class="gallery-card" onclick="openModal('6505.jpg', 'Sesi Presentasi Strategis & Inovasi Proyek')">
+                <img src="6505.jpg" alt="Presentasi">
             </div>
 
-            <!-- Item 2 -->
-            <div class="gallery-item">
-                <img src="foto1.jpeg" alt="Kegiatan Dokumentasi">
-                <div class="overlay">
-                    <i data-lucide="camera" class="w-5 h-5 text-[#f97316]"></i>
-                </div>
+            <div class="gallery-card" onclick="openModal('6504.jpg', 'Dokumentasi Kegiatan dan Diskusi Tim')">
+                <img src="6504.jpg" alt="Kegiatan">
             </div>
 
-            <!-- Item 3: Tinggi -->
-            <div class="gallery-item tall">
-                <img src="foto2.jpeg" alt="Kolaborasi Tim">
-                <div class="overlay">
-                    <p class="text-white text-[10px] font-black uppercase italic tracking-widest">Kerjasama Tim Profesional</p>
-                </div>
+            <div class="gallery-card" onclick="openModal('6501.jpg', 'Kolaborasi Tim dalam Lingkungan Profesional')">
+                <img src="6501.jpg" alt="Kolaborasi">
             </div>
 
-            <!-- Item 4: Lebar -->
-            <div class="gallery-item wide">
-                <img src="foto3.jpeg" alt="Operasional Lapangan">
-                <div class="overlay">
-                    <p class="text-white text-[10px] font-black uppercase italic tracking-widest">Kunjungan & Pengawasan Lapangan</p>
-                </div>
+            <div class="gallery-card" onclick="openModal('6498.jpg', 'Observasi dan Pengawasan Operasional Lapangan')">
+                <img src="6498.jpg" alt="Lapangan">
             </div>
 
-            <!-- Item 5 -->
-            <div class="gallery-item">
-                <img src="foto4.jpeg" alt="Momen Dokumentasi">
+            <div class="gallery-card" onclick="openModal('6496.jpg', 'Dokumentasi Aktivitas Pengembangan Diri')">
+                <img src="6496.jpg" alt="Aktivitas">
             </div>
 
-            <!-- Item 6: Lebar (Grup) -->
-            <div class="gallery-item wide">
-                <img src="foto5.jpeg" alt="Foto Bersama">
-                <div class="overlay">
-                    <p class="text-white text-[10px] font-black uppercase italic tracking-widest">Networking & Community Engagement</p>
-                </div>
+            <div class="gallery-card" onclick="openModal('6047.jpg', 'Momen Kebersamaan dan Community Engagement')">
+                <img src="6047.jpg" alt="Grup">
             </div>
 
-            <!-- Item 7 -->
-            <div class="gallery-item">
-                <img src="foto6.jpeg" alt="Dokumentasi Personal">
+            <div class="gallery-card" onclick="openModal('1192.jpg', 'Personal Branding & Professional Portrait')">
+                <img src="1192.jpg" alt="Personal">
             </div>
 
-            <!-- Item 8: Tinggi -->
-            <div class="gallery-item tall">
-                <img src="foto7.jpeg" alt="Momen Formal">
-                <div class="overlay">
-                    <p class="text-white text-[10px] font-black uppercase italic tracking-widest">Professional Portrait</p>
-                </div>
+            <div class="gallery-card" onclick="openModal('1194.jpg', 'Sesi Formal dan Dokumentasi Akademik')">
+                <img src="1194.jpg" alt="Formal">
             </div>
 
-            <!-- Item 9: Lebar -->
-            <div class="gallery-item wide">
-                <img src="foto8.jpeg" alt="Kegiatan Bersama Tim">
+            <div class="gallery-card" onclick="openModal('6503.jpg', 'Sesi Networking bersama Rekan Kerja')">
+                <img src="6503.jpg" alt="Networking">
             </div>
 
-            <!-- Item 10 -->
-            <div class="gallery-item">
-                <img src="foto9.jpeg" alt="Dokumentasi Tambahan">
+            <div class="gallery-card" onclick="openModal('6502.jpg', 'Analisis Data dan Sesi Teknis')">
+                <img src="6502.jpg" alt="Teknis">
             </div>
-        </div>
-
-        <!-- Tombol Aksi Terpusat -->
-        <div class="mt-20 flex justify-center">
-            <button class="group relative px-12 py-5 bg-[#0a192f] rounded-full overflow-hidden transition-all hover:bg-[#f97316] shadow-xl shadow-navy/20">
-                <div class="relative z-10 flex items-center gap-4 text-white">
-                    <i data-lucide="grid" class="w-5 h-5 group-hover:rotate-90 transition-transform duration-500"></i>
-                    <span class="text-[11px] font-black uppercase italic tracking-widest">Lihat Album Lengkap</span>
-                </div>
-            </button>
         </div>
     </section>
 </div>
+    
     <!--Form Feedback-->
     <section id="contact" class="py-24 bg-slate-900">
     <div class="container mx-auto px-6 max-w-4xl">
@@ -1361,6 +1427,44 @@
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
         });
+
+</script>
+    
+<!-- Modal Overlay -->
+<div id="image-modal" onclick="closeModal()">
+    <button class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-10 h-10"></i>
+    </button>
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="modal-img" src="" alt="Zoom">
+        <div class="modal-text">
+            <span class="text-orange text-[10px] font-black uppercase tracking-[0.4em] italic mb-2 block">Caption</span>
+            <h3 id="modal-caption" class="text-2xl md:text-3xl font-extrabold italic uppercase tracking-tight"></h3>
+        </div>
+    </div>
+</div>
+<script>
+    function openModal(src, caption) {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalCaption = document.getElementById('modal-caption');
+        
+        modalImg.src = src;
+        modalCaption.innerText = caption;
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scroll
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('image-modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scroll
+    }
+
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 </script>
 </body>
 </html>
