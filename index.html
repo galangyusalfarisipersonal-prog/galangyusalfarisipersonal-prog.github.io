@@ -1256,9 +1256,9 @@
     });
 </script>
 <!-- MODAL POP-UP -->
-    <div id="detail-modal" class="modal-overlay fixed inset-0 z-[100] items-center justify-center p-6" onclick="closeModal()">
+    <div id="detail-modal" class="modal-overlay fixed inset-0 z-[100] items-center justify-center p-6" onclick="closeTag()">
         <div class="modal-content bg-white w-full max-w-lg p-10 rounded-[2.5rem] shadow-2xl relative" onclick="event.stopPropagation()">
-            <button onclick="closeModal()" class="absolute top-8 right-8 text-slate-400 hover:text-slate-900 transition-colors">
+            <button onclick="closeTag()" class="absolute top-8 right-8 text-slate-400 hover:text-slate-900 transition-colors">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             <div id="modal-icon-container" class="w-16 h-16 bg-amber-50 text-amber-500 rounded-2xl flex items-center justify-center mb-8">
@@ -1290,7 +1290,7 @@
         }
 
         // Fungsi untuk menutup modal
-        function closeModal() {
+        function closeTag) {
             const modal = document.getElementById('detail-modal');
             modal.classList.remove('active');
             document.body.style.overflow = 'auto'; // Re-enable scroll
