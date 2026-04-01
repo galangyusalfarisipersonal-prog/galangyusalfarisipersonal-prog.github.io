@@ -210,6 +210,95 @@
     .hover-lift:hover {
         transform: translateY(-5px);
     }
+     .custom-section-wrapper { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        background-color: #ffffff;
+        color: #0a192f;
+    }
+    
+    /* Judul Terpusat Sesuai Referensi */
+    .centered-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-tag-centered {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: #f97316;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .header-line {
+        height: 5px;
+        width: 70px;
+        background-color: #f97316;
+        margin-top: 1.5rem;
+    }
+
+    /* Grid Layout Masonry Dinamis */
+    .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-auto-rows: 220px;
+        grid-gap: 1.5rem;
+        grid-auto-flow: dense;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 2.5rem;
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        cursor: pointer;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .gallery-item:hover {
+        box-shadow: 0 30px 60px -12px rgba(10, 25, 47, 0.2);
+        transform: translateY(-8px);
+        z-index: 10;
+    }
+
+    /* Variasi Ukuran untuk Estetika */
+    .tall { grid-row: span 2; }
+    .wide { grid-column: span 2; }
+
+    @media (max-width: 640px) {
+        .wide { grid-column: span 1; }
+        .gallery-container { grid-template-columns: 1fr; }
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(10, 25, 47, 0.85), transparent 60%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem;
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -896,50 +985,100 @@
 </div>
     
     <!-- Image Album / Gallery -->
-    <section class="py-24 bg-slate-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-4">Album Dokumentasi</h2>
-            <p class="text-slate-500 mb-12 italic">Aktivitas operasional, rapat koordinasi, site visit, dan implementasi sistem</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-                <!-- Photo 6  -->
-                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
-                    <img src="foto2.jpeg" alt="Safety Talk" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
-                        <p class="text-white font-bold">Safety Talk Weekly Meeting</p>
-                    </div>
-                <!-- Photo 1 -->
-                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
-                    <img src="foto3.jpeg" alt="Warehouse Operation" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
-                        <p class="text-white font-bold">Warehouse - Spart Part Availability</p>
-                    </div>
-                </div>
-                <!-- Photo 2 -->
-                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
-                    <img src="foto6.jpeg" alt="Workshop Maintenance" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
-                        <p class="text-white font-bold">Workshop - Maintenance Unit</p>
-                    </div>
-                </div>
-                <!-- Photo 3 -->
-                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
-                    <img src="foto0.jpeg " alt="Mining Site" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
-                        <p class="text-white font-bold">Site Visit - Berau Coal Jobsite</p>
-                    </div>
-                </div>
-                <!-- Photo 7 -->
-                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
-                    <img src="foto1.jpeg " alt="On Job Training" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center p-6">
-                        <p class="text-white font-bold">Fresh Graduated Development Program - On Job Training</p>
+    <div class="custom-section-wrapper">
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        
+        <!-- Header Terpusat -->
+        <div class="centered-header">
+            <span class="section-tag-centered">Activity & Documentation</span>
+            <h2 class="text-4xl md:text-5xl italic-black text-[#0a192f] uppercase tracking-tight">Dokumentasi <span class="text-[#f97316]">& Galeri</span></h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="gallery-container">
+            <!-- Item 1: Besar (Utama) -->
+            <div class="gallery-item tall wide">
+                <img src="foto0.jpeg" alt="Presentasi Proyek Inovasi">
+                <div class="overlay">
+                    <div>
+                        <p class="text-[9px] font-black text-[#f97316] uppercase italic tracking-widest mb-1">Highlight</p>
+                        <p class="text-white text-sm font-bold uppercase italic leading-tight">Sesi Presentasi Inovasi & Strategi</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item">
+                <img src="foto1.jpeg" alt="Kegiatan Dokumentasi">
+                <div class="overlay">
+                    <i data-lucide="camera" class="w-5 h-5 text-[#f97316]"></i>
+                </div>
+            </div>
+
+            <!-- Item 3: Tinggi -->
+            <div class="gallery-item tall">
+                <img src="foto2.jpeg" alt="Kolaborasi Tim">
+                <div class="overlay">
+                    <p class="text-white text-[10px] font-black uppercase italic tracking-widest">Kerjasama Tim Profesional</p>
+                </div>
+            </div>
+
+            <!-- Item 4: Lebar -->
+            <div class="gallery-item wide">
+                <img src="foto3.jpeg" alt="Operasional Lapangan">
+                <div class="overlay">
+                    <p class="text-white text-[10px] font-black uppercase italic tracking-widest">Kunjungan & Pengawasan Lapangan</p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-item">
+                <img src="foto4.jpeg" alt="Momen Dokumentasi">
+            </div>
+
+            <!-- Item 6: Lebar (Grup) -->
+            <div class="gallery-item wide">
+                <img src="foto5.jpeg" alt="Foto Bersama">
+                <div class="overlay">
+                    <p class="text-white text-[10px] font-black uppercase italic tracking-widest">Networking & Community Engagement</p>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="gallery-item">
+                <img src="foto6.jpeg" alt="Dokumentasi Personal">
+            </div>
+
+            <!-- Item 8: Tinggi -->
+            <div class="gallery-item tall">
+                <img src="foto7.jpeg" alt="Momen Formal">
+                <div class="overlay">
+                    <p class="text-white text-[10px] font-black uppercase italic tracking-widest">Professional Portrait</p>
+                </div>
+            </div>
+
+            <!-- Item 9: Lebar -->
+            <div class="gallery-item wide">
+                <img src="foto8.jpeg" alt="Kegiatan Bersama Tim">
+            </div>
+
+            <!-- Item 10 -->
+            <div class="gallery-item">
+                <img src="foto9.jpeg" alt="Dokumentasi Tambahan">
+            </div>
+        </div>
+
+        <!-- Tombol Aksi Terpusat -->
+        <div class="mt-20 flex justify-center">
+            <button class="group relative px-12 py-5 bg-[#0a192f] rounded-full overflow-hidden transition-all hover:bg-[#f97316] shadow-xl shadow-navy/20">
+                <div class="relative z-10 flex items-center gap-4 text-white">
+                    <i data-lucide="grid" class="w-5 h-5 group-hover:rotate-90 transition-transform duration-500"></i>
+                    <span class="text-[11px] font-black uppercase italic tracking-widest">Lihat Album Lengkap</span>
+                </div>
+            </button>
         </div>
     </section>
-
+</div>
     <!--Form Feedback-->
     <section id="contact" class="py-24 bg-slate-900">
     <div class="container mx-auto px-6 max-w-4xl">
