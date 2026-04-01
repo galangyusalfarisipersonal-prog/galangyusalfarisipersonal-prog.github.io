@@ -1356,7 +1356,7 @@
 </script>
     
 <!-- Modal Overlay -->
-<div id="image-modal" onclick="closeModal()">
+<div id="image-modal" onclick="closeFoto()">
     <button class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors">
         <i data-lucide="x" class="w-10 h-10"></i>
     </button>
@@ -1381,7 +1381,7 @@
         document.body.style.overflow = 'hidden'; // Prevent scroll
     }
 
-    function closeModal() {
+    function closeFoto() {
         const modal = document.getElementById('image-modal');
         modal.classList.remove('active');
         document.body.style.overflow = 'auto'; // Re-enable scroll
