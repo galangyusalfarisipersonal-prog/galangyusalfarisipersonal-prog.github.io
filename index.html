@@ -11,6 +11,23 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Animasi halus untuk menu dropdown di HP */
+    #mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+        opacity: 0;
+    }
+    #mobile-menu.show-menu {
+        max-height: 400px; /* Sesuaikan dengan jumlah menu */
+        opacity: 1;
+        padding-bottom: 1.5rem;
+    }
+    /* Animasi rotasi ikon saat diklik */
+    .rotate-icon {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+    }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
@@ -337,9 +354,23 @@
                 <a href="#prestasi" class="hover:accent-gold transition">Prestasi</a>
                 <a href="#contact" class="hover:accent-gold transition text-yellow-400">Kontak</a>
             </div>
-            <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+            <!-- Tombol Hamburger (Hanya muncul di HP) -->
+        <button onclick="toggleMobileNav()" class="md:hidden text-orange-500 focus:outline-none p-2" id="nav-button">
+            <svg id="hamburger-svg" class="w-7 h-7 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Menu Mobile Dropdown (Hanya untuk HP) -->
+    <div id="mobile-menu" class="md:hidden px-6 bg-[#0b1120] border-t border-white/5">
+        <div class="flex flex-col space-y-5 text-center text-[11px] font-bold uppercase tracking-[0.3em] pt-6">
+            <a href="#home" onclick="toggleMobileNav()" class="py-2 hover:text-orange-500 transition">Beranda</a>
+            <a href="#competence" onclick="toggleMobileNav()" class="py-2 hover:text-orange-500 transition">Kompetensi</a>
+            <a href="#contact" onclick="toggleMobileNav()" class="py-2 hover:text-orange-500 transition">Kontak</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen bg-slate-900 text-white pt-24 pb-16 flex items-center">
@@ -1324,6 +1355,27 @@
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
+</script>
+<script>
+    function toggleMobileNav() {
+        const menu = document.getElementById('mobile-menu');
+        const button = document.getElementById('nav-button');
+        
+        // Menambah atau menghapus class untuk menampilkan menu
+        menu.classList.toggle('show-menu');
+        
+        // Memberikan efek rotasi pada tombol agar user tahu sudah diklik
+        button.classList.toggle('rotate-icon');
+    }
+
+    // Opsi tambahan: Menutup menu jika user scroll layar
+    window.onscroll = function() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('show-menu')) {
+            menu.classList.remove('show-menu');
+            document.getElementById('nav-button').classList.remove('rotate-icon');
+        }
+    };
 </script>
 </body>
 </html>
